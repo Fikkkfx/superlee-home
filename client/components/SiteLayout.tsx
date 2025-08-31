@@ -14,7 +14,7 @@ function Header() {
 
   return (
     <header className="sticky top-0 z-50 backdrop-blur-md">
-      <div className="w-full bg-fuchsia-500/70">
+      <div className="w-full bg-sky-700/70">
         <div className="container mx-auto flex items-center justify-between py-3">
           <Link to="/" className="flex items-center gap-2">
             <img
@@ -45,7 +45,7 @@ function Header() {
               setCopied(true);
               setTimeout(() => setCopied(false), 1500);
             }}
-            className="rounded-full bg-white/90 px-4 py-2 text-xs font-extrabold text-fuchsia-700 shadow hover:bg-white transition"
+            className="rounded-full bg-white/90 px-4 py-2 text-xs font-extrabold text-sky-800 shadow hover:bg-white transition"
           >
             {copied ? "COPIED" : "COPY CA"}
           </button>
