@@ -39,7 +39,9 @@ function Header() {
           </nav>
           <div className="flex items-center gap-2">
             <a
-              href="#"
+              href="https://x.com/Superlee_Agent"
+              target="_blank"
+              rel="noopener noreferrer"
               aria-label="X (Twitter)"
               className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/20 hover:bg-white/30 transition"
             >
@@ -53,11 +55,13 @@ function Header() {
               <img src="https://cdn.simpleicons.org/discord/ffffff" alt="Discord" className="h-4 w-4" />
             </a>
             <a
-              href="#"
+              href="https://ip.world/token/0x53b3Cd3035feCa127172b84DC5B72a6ca9b9AAb9"
+              target="_blank"
+              rel="noopener noreferrer"
               aria-label="Dexscreener"
               className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/20 hover:bg-white/30 transition"
             >
-              <img src="https://cdn.builder.io/api/v1/image/assets%2Fc692190cfd69486380fecff59911b51b%2Fca0d034b36c540688dd9993e2895dc92?format=webp&width=800" alt="Dexscreener" className="h-4 w-4" />
+              <img src="https://cdn.builder.io/api/v1/image/assets%2Fc692190cfd69486380fecff59911b51b%2F49b2d4ea12134ff699b3437835fba014?format=webp&width=256" alt="Dexscreener" className="h-4 w-4 invert" />
             </a>
           </div>
         </div>
