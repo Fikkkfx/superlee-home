@@ -43,25 +43,23 @@ function Header() {
             <a
               href="#"
               aria-label="X (Twitter)"
-              className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/20 text-white hover:bg-white/30 transition"
+              className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/20 hover:bg-white/30 transition"
             >
-              <svg viewBox="0 0 16 16" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M3 3l10 10M13 3L3 13" />
-              </svg>
+              <img src="https://cdn.simpleicons.org/x/ffffff" alt="X" className="h-4 w-4" />
             </a>
             <a
               href="#"
               aria-label="Discord"
               className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/20 hover:bg-white/30 transition"
             >
-              <img src="https://discord.com/assets/2c21aeda16de354ba5334551a883b481.png" alt="Discord" className="h-4 w-4" />
+              <img src="https://cdn.simpleicons.org/discord/ffffff" alt="Discord" className="h-4 w-4" />
             </a>
             <a
               href="#"
               aria-label="Dexscreener"
               className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/20 hover:bg-white/30 transition"
             >
-              <img src="https://dexscreener.com/favicon.ico" alt="Dexscreener" className="h-4 w-4" />
+              <img src="https://cdn.simpleicons.org/dexscreener/ffffff" alt="Dexscreener" className="h-4 w-4" />
             </a>
             <button
               onClick={async () => {
