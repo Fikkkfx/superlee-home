@@ -103,12 +103,24 @@
     @apply border-border;
   }
 
-  html { scroll-behavior: smooth; }
+  html {
+    scroll-behavior: smooth;
+  }
 
   body {
     @apply bg-background text-foreground;
-    font-family: "Poppins", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-    background-image: url('https://cdn.builder.io/api/v1/image/assets%2Fc692190cfd69486380fecff59911b51b%2F49e0aef9504142829a4c4d0b1273d124?format=webp&width=1600');
+    font-family:
+      "Poppins",
+      ui-sans-serif,
+      system-ui,
+      -apple-system,
+      Segoe UI,
+      Roboto,
+      Helvetica,
+      Arial,
+      "Apple Color Emoji",
+      "Segoe UI Emoji";
+    background-image: url("https://cdn.builder.io/api/v1/image/assets%2Fc692190cfd69486380fecff59911b51b%2F49e0aef9504142829a4c4d0b1273d124?format=webp&width=1600");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -120,22 +132,37 @@
     content: "";
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0, 0, 0, 0.5);
     pointer-events: none;
     z-index: 0;
   }
 
   /* Ensure app content sits above overlay */
-  #root { position: relative; z-index: 1; }
+  #root {
+    position: relative;
+    z-index: 1;
+  }
 
-  .font-display { font-family: "Press Start 2P", cursive; }
+  .font-display {
+    font-family: "Press Start 2P", cursive;
+  }
 
   /* Hide scrollbars but keep scroll functionality */
-  html, body { -ms-overflow-style: none; scrollbar-width: none; }
-  html::-webkit-scrollbar, body::-webkit-scrollbar { width: 0 !important; height: 0 !important; }
+  html,
+  body {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  html::-webkit-scrollbar,
+  body::-webkit-scrollbar {
+    width: 0 !important;
+    height: 0 !important;
+  }
 
   .title-pop {
     @apply font-display text-white uppercase tracking-wider;
-    text-shadow: 0 6px 0 rgba(0,0,0,0.35), 0 12px 24px rgba(0,0,0,0.2);
+    text-shadow:
+      0 6px 0 rgba(0, 0, 0, 0.35),
+      0 12px 24px rgba(0, 0, 0, 0.2);
   }
 }

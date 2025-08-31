@@ -29,8 +29,9 @@ export default function NewsPage() {
         <div className="container mx-auto px-4 py-12 md:py-16">
           <h1 className="title-pop text-4xl md:text-6xl">News</h1>
           <p className="mt-4 max-w-3xl text-white/90 drop-shadow-[0_2px_0_rgba(0,0,0,0.45)]">
-            Data is the biggest bottleneck in the next wave of AI development. SuperLee Agent is the
-            bridge between community, IP, and trustworthy data — here are the latest updates.
+            Data is the biggest bottleneck in the next wave of AI development.
+            SuperLee Agent is the bridge between community, IP, and trustworthy
+            data — here are the latest updates.
           </p>
         </div>
       </section>
@@ -59,7 +60,9 @@ export default function NewsPage() {
                   <h3 className="text-lg font-bold text-white drop-shadow-[0_2px_0_rgba(0,0,0,0.45)]">
                     {n.title}
                   </h3>
-                  <p className="text-sm text-white/85 drop-shadow-[0_2px_0_rgba(0,0,0,0.35)]">{n.excerpt}</p>
+                  <p className="text-sm text-white/85 drop-shadow-[0_2px_0_rgba(0,0,0,0.35)]">
+                    {n.excerpt}
+                  </p>
                   <div className="pt-2 text-xs font-extrabold text-sky-200 opacity-0 transition group-hover:opacity-100">
                     Read more →
                   </div>
