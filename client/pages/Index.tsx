@@ -23,7 +23,7 @@ export default function Index() {
       <section className="relative py-28 md:py-36">
         <div className="absolute inset-0 bg-gradient-to-b from-fuchsia-200/30 to-fuchsia-300/20" />
         <div className="container relative mx-auto text-center">
-          <h1 className="title-pop mx-auto max-w-3xl text-5xl leading-tight md:text-7xl">
+          <h1 className="title-pop mx-auto max-w-3xl text-[44px] leading-[48px] md:text-[67px] md:leading-[80px]">
             SUPERLEE AI AGENT
           </h1>
           <p className="mx-auto mt-5 max-w-2xl text-sm md:text-base font-semibold text-white/95 drop-shadow-[0_2px_0_rgba(0,0,0,0.55)]">
