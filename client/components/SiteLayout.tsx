@@ -18,7 +18,7 @@ function Header() {
         <div className="container mx-auto flex items-center justify-between py-3">
           <Link to="/" className="flex items-center gap-2">
             <span className="inline-flex h-7 w-7 items-center justify-center rounded-full text-fuchsia-300 shadow">★</span>
-            <span className="font-display text-xl tracking-wider text-white drop-shadow-[0_2px_0_rgba(0,0,0,0.45)]">SUPERLEE AI AGENT</span>
+            <span className="font-display text-[15px] leading-7 tracking-wider text-white drop-shadow-[0_2px_0_rgba(0,0,0,0.45)]">SUPERLEE AI AGENT</span>
           </Link>
           <nav className="hidden md:flex items-center gap-6 justify-start">
             {navItems.map((n) => (
