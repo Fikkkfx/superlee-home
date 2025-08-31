@@ -1,62 +1,45 @@
-import { DemoResponse } from "@shared/api";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import SiteLayout from "@/components/SiteLayout";
 
 export default function Index() {
   const [exampleFromServer, setExampleFromServer] = useState("");
-  // Fetch users on component mount
   useEffect(() => {
     fetchDemo();
   }, []);
 
-  // Example of how to fetch data from the server (if needed)
   const fetchDemo = async () => {
     try {
       const response = await fetch("/api/demo");
-      const data = (await response.json()) as DemoResponse;
+      const data = (await response.json()) as { message: string };
       setExampleFromServer(data.message);
     } catch (error) {
-      console.error("Error fetching hello:", error);
+      // ignore
     }
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-100 to-slate-200">
-      <div className="text-center">
-        {/* TODO: FUSION_GENERATION_APP_PLACEHOLDER replace everything here with the actual app! */}
-        <h1 className="text-2xl font-semibold text-slate-800 flex items-center justify-center gap-3">
-          <svg
-            className="animate-spin h-8 w-8 text-slate-400"
-            viewBox="0 0 50 50"
-          >
-            <circle
-              className="opacity-30"
-              cx="25"
-              cy="25"
-              r="20"
-              stroke="currentColor"
-              strokeWidth="5"
-              fill="none"
-            />
-            <circle
-              className="text-slate-600"
-              cx="25"
-              cy="25"
-              r="20"
-              stroke="currentColor"
-              strokeWidth="5"
-              fill="none"
-              strokeDasharray="100"
-              strokeDashoffset="75"
-            />
-          </svg>
-          Generating your app...
-        </h1>
-        <p className="mt-4 text-slate-600 max-w-md">
-          Watch the chat on the left for updates that might need your attention
-          to finish generating
-        </p>
-        <p className="mt-4 hidden max-w-md">{exampleFromServer}</p>
-      </div>
-    </div>
+    <SiteLayout>
+      <section className="relative py-28 md:py-36">
+        <div className="absolute inset-0 bg-gradient-to-b from-pink-200/30 to-pink-300/20" />
+        <div className="container relative mx-auto text-center">
+          <h1 className="title-pop mx-auto max-w-3xl text-5xl leading-tight md:text-7xl">
+            IPPY ON STORY
+          </h1>
+          <p className="mx-auto mt-5 max-w-2xl text-sm md:text-base font-semibold text-white/95 drop-shadow-[0_2px_0_rgba(0,0,0,0.55)]">
+            Meet Ippy, Story's official mascot. Ippy is ever‑changing, shape‑shifting, and can take any form imaginable — just like IP itself.
+          </p>
+          <div className="mt-8 flex justify-center">
+            <Link
+              to="/how-to-buy"
+              className="rounded-xl bg-gradient-to-b from-white to-pink-100 px-6 py-3 text-sm font-extrabold text-pink-600 shadow-[0_6px_0_rgba(0,0,0,0.35)] ring-2 ring-white/70 hover:translate-y-[1px] hover:shadow-[0_4px_0_rgba(0,0,0,0.35)] transition"
+            >
+              BUY NOW
+            </Link>
+          </div>
+          <p className="mt-10 hidden">{exampleFromServer}</p>
+        </div>
+      </section>
+    </SiteLayout>
   );
 }

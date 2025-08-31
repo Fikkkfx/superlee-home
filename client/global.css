@@ -1,5 +1,5 @@
 /** @import must precede all other statements */
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lilita+One&family=Poppins:wght@400;600;700;800&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -12,33 +12,33 @@
    * A different format will require also updating the theme in tailwind.config.ts.
   */
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 330 100% 96%;
+    --foreground: 343 14% 12%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 330 100% 96%;
+    --card-foreground: 343 14% 12%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 330 100% 96%;
+    --popover-foreground: 343 14% 12%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 335 80% 60%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 324 87% 85%;
+    --secondary-foreground: 343 14% 12%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 330 72% 92%;
+    --muted-foreground: 343 14% 28%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 325 77% 88%;
+    --accent-foreground: 343 14% 12%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 330 38% 88%;
+    --input: 330 38% 88%;
+    --ring: 335 80% 60%;
 
     --radius: 0.5rem;
 
@@ -105,5 +105,17 @@
 
   body {
     @apply bg-background text-foreground;
+    font-family: "Poppins", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+    background-image: url('https://cdn.builder.io/api/v1/image/assets%2Fc692190cfd69486380fecff59911b51b%2Fc5a634ffe3474839b35b712c48b774ba?format=webp&width=1600');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+
+  .font-display { font-family: "Lilita One", cursive; }
+
+  .title-pop {
+    @apply font-display text-white uppercase tracking-wider;
+    text-shadow: 0 6px 0 rgba(0,0,0,0.35), 0 12px 24px rgba(0,0,0,0.2);
   }
 }
