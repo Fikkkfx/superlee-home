@@ -21,6 +21,18 @@ export default function Index() {
               BUY NOW
             </Link>
           </div>
+          <div className="pointer-events-auto absolute bottom-6 left-0 right-0 flex justify-center">
+            <button
+              onClick={() => window.scrollTo({ top: window.innerHeight, behavior: "smooth" })}
+              className="group inline-flex items-center gap-2 rounded-full border border-white/60 bg-white/10 px-4 py-2 text-xs font-bold text-white backdrop-blur hover:bg-white/20 transition"
+              aria-label="Scroll down"
+            >
+              <svg viewBox="0 0 24 24" className="h-4 w-4 animate-bounce" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M6 9l6 6 6-6" />
+              </svg>
+              Scroll Down
+            </button>
+          </div>
         </div>
       </section>
     </SiteLayout>
