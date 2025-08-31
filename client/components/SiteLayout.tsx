@@ -84,7 +84,7 @@ export default function SiteLayout({ children }: PropsWithChildren) {
     <div className="min-h-screen flex flex-col">
       <Header />
       <main className="flex-1">{children}</main>
-      <footer className="py-8 text-center text-white/90 text-xs drop-shadow-[0_2px_0_rgba(0,0,0,0.45)]">
+      <footer className="-mt-0.5 py-8 text-center text-white/90 text-xs drop-shadow-[0_2px_0_rgba(0,0,0,0.45)]">
         © {new Date().getFullYear()} SUPERLEE AI AGENT
       </footer>
     </div>
