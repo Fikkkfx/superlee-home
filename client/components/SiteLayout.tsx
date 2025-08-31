@@ -17,8 +17,12 @@ function Header() {
       <div className="w-full bg-fuchsia-500/70">
         <div className="container mx-auto flex items-center justify-between py-3">
           <Link to="/" className="flex items-center gap-2">
-            <span className="inline-flex h-7 w-7 items-center justify-center rounded-full text-fuchsia-300 shadow">★</span>
-            <span className="font-display text-[15px] leading-7 tracking-wider text-white drop-shadow-[0_2px_0_rgba(0,0,0,0.45)]">SUPERLEE AI AGENT</span>
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets%2Fc692190cfd69486380fecff59911b51b%2F2a527fba610b4d5fa395eed6a17c2227?format=webp&width=800"
+              alt="SUPERLEE AI AGENT logo"
+              className="h-7 w-auto object-contain drop-shadow-[0_2px_0_rgba(0,0,0,0.45)]"
+            />
+            <span className="sr-only">SUPERLEE AI AGENT</span>
           </Link>
           <nav className="hidden md:flex items-center gap-6 justify-start">
             {navItems.map((n) => (
