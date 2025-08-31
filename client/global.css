@@ -108,7 +108,7 @@
   body {
     @apply bg-background text-foreground;
     font-family: "Poppins", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-    background-image: url('https://cdn.builder.io/api/v1/image/assets%2Fc692190cfd69486380fecff59911b51b%2Fc5a634ffe3474839b35b712c48b774ba?format=webp&width=1600');
+    background-image: url('https://cdn.builder.io/api/v1/image/assets%2Fc692190cfd69486380fecff59911b51b%2F49e0aef9504142829a4c4d0b1273d124?format=webp&width=1600');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
