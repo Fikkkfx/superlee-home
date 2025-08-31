@@ -3,9 +3,9 @@ import { PropsWithChildren, useState } from "react";
 
 const navItems = [
   { to: "/about", label: "ABOUT" },
+  { to: "/ippyfy", label: "AGENT" },
   { to: "/how-to-buy", label: "HOW TO BUY" },
   { to: "/faq", label: "FAQ" },
-  { to: "/ippyfy", label: "IPPYFY" },
 ];
 
 function Header() {
@@ -17,10 +17,10 @@ function Header() {
       <div className="w-full bg-pink-300/70">
         <div className="container mx-auto flex items-center justify-between py-3">
           <Link to="/" className="flex items-center gap-2">
-            <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-white/90 text-pink-500 shadow">★</span>
-            <span className="font-display text-xl tracking-wider text-white drop-shadow-[0_2px_0_rgba(0,0,0,0.45)]">IPPY</span>
+            <span className="inline-flex h-7 w-7 items-center justify-center rounded-full text-pink-500 shadow">★</span>
+            <span className="font-display text-xl tracking-wider text-white drop-shadow-[0_2px_0_rgba(0,0,0,0.45)]">SUPERLEE AI AGENT</span>
           </Link>
-          <nav className="hidden md:flex items-center gap-6">
+          <nav className="hidden md:flex items-center gap-6 justify-start">
             {navItems.map((n) => (
               <NavLink
                 key={n.to}
@@ -58,7 +58,7 @@ export default function SiteLayout({ children }: PropsWithChildren) {
       <Header />
       <main className="flex-1">{children}</main>
       <footer className="py-8 text-center text-white/90 text-xs drop-shadow-[0_2px_0_rgba(0,0,0,0.45)]">
-        © {new Date().getFullYear()} IPPY ON STORY
+        © {new Date().getFullYear()} SUPERLEE AI AGENT
       </footer>
     </div>
   );
