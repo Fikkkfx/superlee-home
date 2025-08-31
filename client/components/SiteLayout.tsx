@@ -14,10 +14,10 @@ function Header() {
 
   return (
     <header className="sticky top-0 z-50 backdrop-blur-md">
-      <div className="w-full bg-pink-300/70">
+      <div className="w-full bg-fuchsia-500/70">
         <div className="container mx-auto flex items-center justify-between py-3">
           <Link to="/" className="flex items-center gap-2">
-            <span className="inline-flex h-7 w-7 items-center justify-center rounded-full text-pink-500 shadow">★</span>
+            <span className="inline-flex h-7 w-7 items-center justify-center rounded-full text-fuchsia-300 shadow">★</span>
             <span className="font-display text-xl tracking-wider text-white drop-shadow-[0_2px_0_rgba(0,0,0,0.45)]">SUPERLEE AI AGENT</span>
           </Link>
           <nav className="hidden md:flex items-center gap-6 justify-start">
@@ -41,7 +41,7 @@ function Header() {
               setCopied(true);
               setTimeout(() => setCopied(false), 1500);
             }}
-            className="rounded-full bg-white/90 px-4 py-2 text-xs font-extrabold text-pink-600 shadow hover:bg-white transition"
+            className="rounded-full bg-white/90 px-4 py-2 text-xs font-extrabold text-fuchsia-700 shadow hover:bg-white transition"
           >
             {copied ? "COPIED" : "COPY CA"}
           </button>

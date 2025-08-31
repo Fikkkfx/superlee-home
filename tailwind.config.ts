@@ -14,7 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ["Lilita One", "system-ui", "sans-serif"],
+        display: ["Press Start 2P", "system-ui", "sans-serif"],
         sans: ["Poppins", "ui-sans-serif", "system-ui", "sans-serif"],
       },
       colors: {
