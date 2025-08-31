@@ -1,23 +1,7 @@
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import SiteLayout from "@/components/SiteLayout";
 
 export default function Index() {
-  const [exampleFromServer, setExampleFromServer] = useState("");
-  useEffect(() => {
-    fetchDemo();
-  }, []);
-
-  const fetchDemo = async () => {
-    try {
-      const response = await fetch("/api/demo");
-      const data = (await response.json()) as { message: string };
-      setExampleFromServer(data.message);
-    } catch (error) {
-      // ignore
-    }
-  };
-
   return (
     <SiteLayout>
       <section className="relative py-28 md:py-36">
@@ -37,7 +21,6 @@ export default function Index() {
               BUY NOW
             </Link>
           </div>
-          <p className="mt-10 hidden">{exampleFromServer}</p>
         </div>
       </section>
     </SiteLayout>
