@@ -116,6 +116,10 @@
 
   .font-display { font-family: "Press Start 2P", cursive; }
 
+  /* Hide scrollbars but keep scroll functionality */
+  html, body { -ms-overflow-style: none; scrollbar-width: none; }
+  html::-webkit-scrollbar, body::-webkit-scrollbar { width: 0 !important; height: 0 !important; }
+
   .title-pop {
     @apply font-display text-white uppercase tracking-wider;
     text-shadow: 0 6px 0 rgba(0,0,0,0.35), 0 12px 24px rgba(0,0,0,0.2);
