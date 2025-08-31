@@ -14,14 +14,6 @@ export default function Index() {
             <div>Meet Superlee, From the community, for the community , amplified by innovation.</div>
             <div>SuperLee Agent thrives where trust meets technology, shaping the future of decentralized identity</div>
           </div>
-          <div className="mt-8 flex justify-center">
-            <Link
-              to="/how-to-buy"
-              className="rounded-xl bg-gradient-to-b from-white to-sky-100 px-6 py-3 text-sm font-extrabold text-sky-800 shadow-[0_6px_0_rgba(0,0,0,0.35)] ring-2 ring-white/70 hover:translate-y-[1px] hover:shadow-[0_4px_0_rgba(0,0,0,0.35)] transition"
-            >
-              BUY NOW
-            </Link>
-          </div>
         </div>
       </section>
     </SiteLayout>
