@@ -112,7 +112,21 @@
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    position: relative;
   }
+
+  /* Global overlay over background (50%) */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Ensure app content sits above overlay */
+  #root { position: relative; z-index: 1; }
 
   .font-display { font-family: "Press Start 2P", cursive; }
 
