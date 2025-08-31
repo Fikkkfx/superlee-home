@@ -5,7 +5,7 @@ export default function Index() {
   return (
     <SiteLayout>
       <section className="relative py-28 md:py-36">
-        <div className="absolute inset-0 bg-gradient-to-b from-sky-200/30 to-sky-300/20" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/25 to-black/10" />
         <div className="container relative mx-auto text-center">
           <h1 className="title-pop mx-auto max-w-3xl text-[44px] leading-[48px] md:text-[67px] md:leading-[80px]">
             SUPERLEE AI AGENT
