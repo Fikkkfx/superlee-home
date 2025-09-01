@@ -5,18 +5,20 @@ export default function FlappySuperlee() {
   return (
     <SiteLayout>
       <section className="relative">
-        <div className="container mx-auto px-4 min-h-[calc(100vh-96px)] md:min-h-[calc(100vh-112px)] grid grid-rows-[auto,1fr,auto] gap-4">
+        <div className="container mx-auto px-4 grid grid-rows-[auto,1fr,auto] gap-4 min-h-[calc(100vh-96px)] md:min-h-[calc(100vh-112px)]">
           <h1 className="title-pop text-center text-4xl md:text-6xl animate-retro-pop">
             Flappy Superlee
           </h1>
           <div
-            className="mx-auto w-full max-w-5xl h-full rounded-2xl border border-white/20 bg-white/5 backdrop-blur p-2 animate-enter-blur"
+            className="mx-auto w-full max-w-6xl h-[calc(100vh-220px)] md:h-[calc(100vh-260px)] rounded-2xl border border-white/20 bg-white/5 overflow-hidden animate-enter-blur"
             style={{ animationDelay: "160ms" }}
           >
             <iframe
               src="https://flappy-superlee.vercel.app/"
               title="Flappy Superlee"
-              className="w-full h-full rounded-xl"
+              className="w-full h-full"
+              style={{ border: 0 }}
+              scrolling="no"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               sandbox="allow-scripts allow-same-origin"
             />
