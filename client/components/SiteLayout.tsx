@@ -11,14 +11,20 @@ function Header() {
   const [clicked, setClicked] = useState<string | null>(null);
   const timerRef = useRef<number | null>(null);
 
-  useEffect(() => () => {
-    if (timerRef.current) window.clearTimeout(timerRef.current);
-  }, []);
+  useEffect(
+    () => () => {
+      if (timerRef.current) window.clearTimeout(timerRef.current);
+    },
+    [],
+  );
   return (
     <header className="sticky top-0 z-50 backdrop-blur-md">
       <div className="w-full bg-sky-700/70">
         <div className="container mx-auto grid grid-cols-3 items-center py-3">
-          <Link to="/" className="flex items-center gap-2 justify-self-start group">
+          <Link
+            to="/"
+            className="flex items-center gap-2 justify-self-start group"
+          >
             <img
               src="https://cdn.builder.io/api/v1/image/assets%2Fc692190cfd69486380fecff59911b51b%2F17597a5e17494a4da32f3412a089aa51?format=webp&width=800"
               alt="Superlee AI Agent logo"
@@ -36,7 +42,10 @@ function Header() {
                 onClick={() => {
                   setClicked(n.to);
                   if (timerRef.current) window.clearTimeout(timerRef.current);
-                  timerRef.current = window.setTimeout(() => setClicked(null), 450);
+                  timerRef.current = window.setTimeout(
+                    () => setClicked(null),
+                    450,
+                  );
                 }}
                 className={({ isActive }) =>
                   `font-display uppercase text-white/95 tracking-[0.5px] text-[10px] md:text-xs transition hover:text-white drop-shadow-[0_2px_0_rgba(0,0,0,0.45)] ${
