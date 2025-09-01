@@ -5,7 +5,6 @@ const navItems = [
   { to: "/about", label: "ABOUT" },
   { to: "/ippyfy", label: "AGENT" },
   { to: "/how-to-buy", label: "NEWS" },
-  { to: "/faq", label: "FAQ" },
 ];
 
 function Header() {
@@ -64,16 +63,16 @@ function Header() {
               />
             </a>
             <a
-              href="https://ip.world/token/0x53b3Cd3035feCa127172b84DC5B72a6ca9b9AAb9"
+              href="https://dexscreener.com/story/0x480cc82aaa3632c282cca6b43a5a3e5faf503ccb"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Dexscreener"
               className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/20 hover:bg-white/30 transition"
             >
               <img
-                src="https://cdn.builder.io/api/v1/image/assets%2Fc692190cfd69486380fecff59911b51b%2F49b2d4ea12134ff699b3437835fba014?format=webp&width=256"
+                src="https://cdn.simpleicons.org/dexscreener/ffffff"
                 alt="Dexscreener"
-                className="h-4 w-4 invert"
+                className="h-4 w-4"
               />
             </a>
           </div>
