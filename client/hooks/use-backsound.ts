@@ -6,27 +6,38 @@ export function useBacksound(src: string, defaultVolume = 0.15) {
   const [enabled, setEnabled] = useState(false);
 
   const ensureAudio = useCallback(() => {
-    if (!audioRef.current) {
-      const el = new Audio(src);
+    const g = window as any;
+    const key = "__backsound_audio__";
+    let el: HTMLAudioElement | null = g[key] || null;
+    if (!el) {
+      el = new Audio(src);
       el.loop = true;
       el.preload = "auto";
       el.crossOrigin = "anonymous";
       el.volume = defaultVolume;
-      audioRef.current = el;
+      g[key] = el;
+    } else {
+      // keep current play state; update src if different
+      if (src && el.src !== src) {
+        const wasPlaying = !el.paused;
+        el.src = src;
+        el.load();
+        if (wasPlaying) void el.play().catch(() => {});
+      }
+      if (typeof defaultVolume === "number") el.volume = defaultVolume;
     }
-    return audioRef.current!;
+    audioRef.current = el;
+    return el;
   }, [src, defaultVolume]);
 
   const stop = useCallback(() => {
-    const el = audioRef.current;
-    if (!el) return;
+    const el = ensureAudio();
     try {
       el.pause();
-      el.currentTime = 0;
     } catch {}
     setEnabled(false);
     localStorage.setItem("soundEnabled", "false");
-  }, []);
+  }, [ensureAudio]);
 
   const start = useCallback(async () => {
     const el = ensureAudio();
@@ -42,13 +53,17 @@ export function useBacksound(src: string, defaultVolume = 0.15) {
   }, [ensureAudio]);
 
   const toggle = useCallback(() => {
-    if (enabled) stop();
+    const el = ensureAudio();
+    if (!el.paused) stop();
     else void start();
-  }, [enabled, start, stop]);
+  }, [ensureAudio, start, stop]);
 
   useEffect(() => {
+    const el = ensureAudio();
+    setEnabled(!el.paused);
+
     const pref = localStorage.getItem("soundEnabled");
-    if (pref === "true") pendingStartRef.current = true;
+    if (pref === "true" && el.paused) pendingStartRef.current = true;
 
     const onFirstGesture = () => {
       if (pendingStartRef.current) {
@@ -61,17 +76,18 @@ export function useBacksound(src: string, defaultVolume = 0.15) {
     window.addEventListener("pointerdown", onFirstGesture, { passive: true });
     window.addEventListener("keydown", onFirstGesture);
 
+    const sync = () => setEnabled(!el.paused);
+    el.addEventListener("play", sync);
+    el.addEventListener("pause", sync);
+
     return () => {
       window.removeEventListener("pointerdown", onFirstGesture);
       window.removeEventListener("keydown", onFirstGesture);
-      stop();
-      if (audioRef.current) {
-        audioRef.current.src = "";
-        audioRef.current.load();
-        audioRef.current = null;
-      }
+      el.removeEventListener("play", sync);
+      el.removeEventListener("pause", sync);
+      // Do NOT stop or dispose; persist across route changes
     };
-  }, [start, stop]);
+  }, [ensureAudio, start]);
 
   return { enabled, start, stop, toggle };
 }
