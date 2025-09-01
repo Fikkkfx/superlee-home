@@ -1,5 +1,5 @@
 import Placeholder from "./Placeholder";
 
-export default function Ippyfy() {
+export default function Agent() {
   return <Placeholder title="WELCOME TO AGENT" />;
 }

@@ -4,6 +4,7 @@ import { PropsWithChildren, useEffect, useRef, useState } from "react";
 const navItems = [
   { to: "/about", label: "ABOUT" },
   { to: "/agent", label: "AGENT" },
+  { to: "/game", label: "GAME" },
   { to: "/news", label: "NEWS" },
 ];
 
