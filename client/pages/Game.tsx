@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 
 const games = [
   {
-    title: "Flappy Superlee",
+    title: "Cooming soon",
     to: "/game/flappy",
-    description: "Tap to fly. Dodge obstacles. Retro fun!",
+    disabled: true as const,
   },
   {
     title: "Cooming soon",
