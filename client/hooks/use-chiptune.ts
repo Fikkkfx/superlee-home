@@ -37,9 +37,21 @@ export function useChiptuneAudio() {
     if (!AudioCtx) return;
 
     const ctx: AudioContext = new AudioCtx();
+    // Ensure context is running on gesture
+    void ctx.resume().catch(() => {});
+
     const master = ctx.createGain();
-    master.gain.value = 0.06; // subtle by default
+    master.gain.value = 0.1; // slightly louder but still subtle
     master.connect(ctx.destination);
+
+    // Safari unlock: play an empty buffer immediately
+    try {
+      const b = ctx.createBuffer(1, 1, 22050);
+      const s = ctx.createBufferSource();
+      s.buffer = b;
+      s.connect(master);
+      s.start(0);
+    } catch {}
 
     ctxRef.current = ctx;
     gainRef.current = master;
