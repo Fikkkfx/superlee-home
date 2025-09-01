@@ -10,7 +10,14 @@ interface LottiePlayerProps {
 }
 
 // Wrapper around @lottiefiles/lottie-player with graceful fallback when JSON is invalid
-export default function LottiePlayer({ src, autoplay = true, loop = true, className, style, speed = 1 }: LottiePlayerProps) {
+export default function LottiePlayer({
+  src,
+  autoplay = true,
+  loop = true,
+  className,
+  style,
+  speed = 1,
+}: LottiePlayerProps) {
   const id = useId();
   const ref = useRef<any>(null);
   const [failed, setFailed] = useState(false);
@@ -20,7 +27,8 @@ export default function LottiePlayer({ src, autoplay = true, loop = true, classN
     if (!document.getElementById(scriptId)) {
       const s = document.createElement("script");
       s.id = scriptId;
-      s.src = "https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js";
+      s.src =
+        "https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js";
       s.type = "module";
       document.head.appendChild(s);
     }
@@ -40,7 +48,8 @@ export default function LottiePlayer({ src, autoplay = true, loop = true, classN
     return (
       <div className={className} style={style}>
         <div className="flex h-full w-full items-center justify-center rounded-xl border border-white/20 bg-white/5 p-4 text-center text-white/80">
-          Animation gagal dimuat. Mohon kirim file Lottie JSON/.lottie yang valid.
+          Animation gagal dimuat. Mohon kirim file Lottie JSON/.lottie yang
+          valid.
         </div>
       </div>
     );
