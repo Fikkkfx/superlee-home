@@ -89,8 +89,16 @@ export default {
           "100%": { opacity: "1", transform: "translateY(0) scale(1)" },
         },
         "enter-blur": {
-          "0%": { opacity: "0", filter: "blur(8px)", transform: "translateY(8px)" },
-          "100%": { opacity: "1", filter: "blur(0)", transform: "translateY(0)" },
+          "0%": {
+            opacity: "0",
+            filter: "blur(8px)",
+            transform: "translateY(8px)",
+          },
+          "100%": {
+            opacity: "1",
+            filter: "blur(0)",
+            transform: "translateY(0)",
+          },
         },
       },
       animation: {

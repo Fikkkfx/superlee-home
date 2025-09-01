@@ -22,7 +22,10 @@ export default function About() {
             />
 
             <div className="space-y-4 text-sm leading-6 text-white/90 drop-shadow-[0_2px_0_rgba(0,0,0,0.45)] md:text-base md:leading-7">
-              <div className="animate-enter-up" style={{ animationDelay: "40ms" }}>
+              <div
+                className="animate-enter-up"
+                style={{ animationDelay: "40ms" }}
+              >
                 Superlee is a community-based, multi-purpose AI agent designed
                 to help anyone build, manage, and protect identities and work in
                 the decentralized era. With a fun yet powerful retro style,
@@ -30,7 +33,10 @@ export default function About() {
                 control.
               </div>
 
-              <div className="animate-enter-up" style={{ animationDelay: "120ms" }}>
+              <div
+                className="animate-enter-up"
+                style={{ animationDelay: "120ms" }}
+              >
                 Superlee offers a wide range of skills: rapid research,
                 information curation, content creation, repetitive task
                 automation, community moderation, and on- and off-chain action
@@ -39,7 +45,10 @@ export default function About() {
                 the imagination of the community.
               </div>
 
-              <div className="animate-enter-up" style={{ animationDelay: "200ms" }}>
+              <div
+                className="animate-enter-up"
+                style={{ animationDelay: "200ms" }}
+              >
                 Our mission is simple: to bridge creativity and trust. With
                 verifiable actions and open collaboration, Superlee is an agile,
                 everyday partner that fosters the creation of new, sustainable
