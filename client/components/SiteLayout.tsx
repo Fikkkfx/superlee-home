@@ -70,7 +70,7 @@ function Header() {
               className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/20 hover:bg-white/30 transition"
             >
               <img
-                src="https://cdn.simpleicons.org/dexscreener/ffffff"
+                src="https://cdn.builder.io/api/v1/image/assets%2Fc692190cfd69486380fecff59911b51b%2F351c8fae37694271824454676fb575a7?format=webp&width=800"
                 alt="Dexscreener"
                 className="h-4 w-4"
               />
