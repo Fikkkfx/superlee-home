@@ -15,7 +15,7 @@ export default function FlappySuperlee() {
           <div className="mx-auto mt-10 grid place-items-center">
             <div className="w-[280px] h-[280px] md:w-[360px] md:h-[360px] rounded-2xl border border-white/20 bg-white/5 backdrop-blur p-4 animate-enter-blur" style={{ animationDelay: "200ms" }}>
               <LottiePlayer
-                src="https://cdn.builder.io/o/assets%2F2711b768900f460f84e959042bd91f7e%2Fa3baa3bb62a94d6c9a402a3cdafc9749?alt=media&token=94eddbb2-dfa2-423c-b869-32e5e0d6c8f9&apiKey=2711b768900f460f84e959042bd91f7e"
+                src="https://cdn.builder.io/o/assets%2F2711b768900f460f84e959042bd91f7e%2F9982a0b6a64440239c99117dce462173?alt=media&token=ce21721d-6abd-47e1-8d4b-3975a5cdafed&apiKey=2711b768900f460f84e959042bd91f7e"
                 autoplay
                 loop
                 className="w-full h-full"
