@@ -1,5 +1,6 @@
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { PropsWithChildren, useEffect, useRef, useState } from "react";
+import AudioToggle from "@/components/AudioToggle";
 
 const navItems = [
   { to: "/about", label: "ABOUT" },
