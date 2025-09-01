@@ -96,6 +96,10 @@ function Header() {
                 className="h-4 w-4"
               />
             </a>
+            {/* Audio toggle */}
+            {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+            {/* @ts-ignore - lazy import path alias works via Vite */}
+            <AudioToggle />
           </div>
         </div>
       </div>
