@@ -12,6 +12,7 @@ import About from "./pages/About";
 import HowToBuy from "./pages/HowToBuy";
 import FAQ from "./pages/FAQ";
 import Ippyfy from "./pages/Ippyfy";
+import Game from "./pages/Game";
 
 const queryClient = new QueryClient();
 
@@ -27,6 +28,7 @@ const App = () => (
           <Route path="/news" element={<HowToBuy />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/agent" element={<Ippyfy />} />
+          <Route path="/game" element={<Game />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
