@@ -18,8 +18,8 @@ export default function FlappySuperlee() {
               title="Flappy Superlee"
               className="w-full h-full block"
               style={{ border: 0 }}
-              scrolling="auto"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              scrolling="no"
+              allow="fullscreen; gamepad; accelerometer; gyroscope; clipboard-write; encrypted-media"
               sandbox="allow-scripts allow-same-origin"
             />
           </div>
