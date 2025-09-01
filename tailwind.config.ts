@@ -100,6 +100,15 @@ export default {
             transform: "translateY(0)",
           },
         },
+        "retro-pop": {
+          "0%": { opacity: "0", transform: "translateY(12px) scale(0.92)" },
+          "40%": { opacity: "1", transform: "translateY(-2px) scale(1.04)" },
+          "100%": { opacity: "1", transform: "translateY(0) scale(1)" },
+        },
+        scanlines: {
+          "0%": { backgroundPosition: "0 0" },
+          "100%": { backgroundPosition: "0 4px" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -108,6 +117,8 @@ export default {
         "logo-wiggle": "logo-wiggle 0.4s ease-in-out infinite",
         "enter-up": "enter-up 0.6s cubic-bezier(0.22,1,0.36,1) both",
         "enter-blur": "enter-blur 0.7s cubic-bezier(0.16,1,0.3,1) both",
+        "retro-pop": "retro-pop 650ms cubic-bezier(0.22,1,0.36,1) both",
+        scanlines: "scanlines 0.9s linear infinite",
       },
     },
   },
