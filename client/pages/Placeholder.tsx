@@ -9,7 +9,7 @@ export default function Placeholder({ title }: { title: string }) {
           <p className="mx-auto mt-6 max-w-2xl text-white/95 drop-shadow-[0_2px_0_rgba(0,0,0,0.55)]">
             Cooming soon!!!{" "}
             <a
-              href="https://x.com/StoryProtocol"
+              href="https://x.com/Superlee_Agent"
               target="_blank"
               rel="noopener noreferrer"
               className="ml-0.5 md:ml-2.5 text-white underline hover:text-white/90"
