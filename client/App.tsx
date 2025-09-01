@@ -13,6 +13,9 @@ import News from "./pages/News";
 import FAQ from "./pages/FAQ";
 import Agent from "./pages/Agent";
 import Game from "./pages/Game";
+import Flappy from "./pages/games/Flappy";
+import Snake from "./pages/games/Snake";
+import Two048 from "./pages/games/Two048";
 
 const queryClient = new QueryClient();
 
@@ -29,6 +32,9 @@ const App = () => (
           <Route path="/faq" element={<FAQ />} />
           <Route path="/agent" element={<Agent />} />
           <Route path="/game" element={<Game />} />
+          <Route path="/game/flappy" element={<Flappy />} />
+          <Route path="/game/snake" element={<Snake />} />
+          <Route path="/game/2048" element={<Two048 />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
