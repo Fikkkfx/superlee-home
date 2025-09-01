@@ -28,7 +28,7 @@ function Header() {
                 key={n.to}
                 to={n.to}
                 className={({ isActive }) =>
-                  `font-semibold text-white/95 tracking-wider text-xs md:text-sm transition hover:text-white drop-shadow-[0_2px_0_rgba(0,0,0,0.45)] ${
+                  `font-display uppercase text-white/95 tracking-[0.75px] text-xs md:text-sm transition hover:text-white drop-shadow-[0_2px_0_rgba(0,0,0,0.45)] ${
                     isActive ? "underline decoration-white/80" : ""
                   }`
                 }
@@ -91,7 +91,7 @@ export default function SiteLayout({ children }: PropsWithChildren) {
       <footer className="-mt-0.5">
         <div className="w-full bg-sky-700/70 backdrop-blur-md">
           <div className="container mx-auto flex items-center justify-center py-3">
-            <span className="text-white/90 text-xs drop-shadow-[0_2px_0_rgba(0,0,0,0.45)]">
+            <span className="font-display uppercase tracking-[0.75px] text-white/90 text-xs drop-shadow-[0_2px_0_rgba(0,0,0,0.45)]">
               © {new Date().getFullYear()} SUPERLEE AI AGENT
             </span>
           </div>
