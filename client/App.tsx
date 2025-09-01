@@ -35,4 +35,13 @@ const App = () => (
   </QueryClientProvider>
 );
 
-createRoot(document.getElementById("root")!).render(<App />);
+const container = document.getElementById("root")!;
+// Reuse existing root if present (prevents duplicate createRoot during HMR)
+const existingRoot = (window as any).__app_root as ReturnType<typeof createRoot> | undefined;
+if (existingRoot) {
+  existingRoot.render(<App />);
+} else {
+  const root = createRoot(container);
+  root.render(<App />);
+  (window as any).__app_root = root;
+}
