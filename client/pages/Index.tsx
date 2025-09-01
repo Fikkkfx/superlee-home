@@ -18,10 +18,6 @@ export default function Index() {
                 shaping the future of decentralized identity.
               </p>
             </div>
-            <div>
-              SuperLee Agent thrives where trust meets technology, shaping the
-              future of decentralized identity
-            </div>
           </div>
         </div>
       </section>
