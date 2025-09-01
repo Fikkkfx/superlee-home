@@ -28,7 +28,7 @@ function Header() {
                 key={n.to}
                 to={n.to}
                 className={({ isActive }) =>
-                  `font-display uppercase text-white/95 tracking-[0.5px] text-[10px] md:text-xs transition hover:text-white drop-shadow-[0_2px_0_rgba(0,0,0,0.45)] ${
+                  `font-display uppercase text-white/95 tracking-[0.5px] text-[10px] md:text-xs transition hover:text-white drop-shadow-[0_2px_0_rgba(0,0,0,0.45)] animate-logo-float hover:animate-logo-wiggle will-change-transform ${
                     isActive ? "underline decoration-white/80" : ""
                   }`
                 }
