@@ -12,7 +12,7 @@ function Header() {
     <header className="sticky top-0 z-50 backdrop-blur-md">
       <div className="w-full bg-sky-700/70">
         <div className="container mx-auto grid grid-cols-3 items-center py-3">
-          <Link to="/" className="flex items-center gap-2 justify-self-start">
+          <Link to="/" className="flex items-center gap-2 justify-self-start group">
             <img
               src="https://cdn.builder.io/api/v1/image/assets%2Fc692190cfd69486380fecff59911b51b%2F17597a5e17494a4da32f3412a089aa51?format=webp&width=800"
               alt="Superlee AI Agent logo"
