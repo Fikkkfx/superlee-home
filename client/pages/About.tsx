@@ -26,18 +26,14 @@ export default function About() {
                 powerful retro style, Superlee prioritizes privacy, transparency, and complete user
                 control.
               </div>
-              <div>
-                <br />
-              </div>
+
               <div>
                 Superlee offers a wide range of skills: rapid research, information curation, content
                 creation, repetitive task automation, community moderation, and on- and off-chain
                 action execution. All of these capabilities are modular and extensible, allowing
                 Superlee to grow with the needs of the ecosystem and the imagination of the community.
               </div>
-              <div>
-                <br />
-              </div>
+
               <div>
                 Our mission is simple: to bridge creativity and trust. With verifiable actions and
                 open collaboration, Superlee is an agile, everyday partner that fosters the creation
