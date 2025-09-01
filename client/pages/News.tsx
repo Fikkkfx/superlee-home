@@ -27,8 +27,8 @@ export default function NewsPage() {
       {/* Header */}
       <section className="relative">
         <div className="container mx-auto px-4 py-12 md:py-16">
-          <h1 className="title-pop text-4xl md:text-6xl">News</h1>
-          <p className="mt-4 max-w-3xl text-white/90 drop-shadow-[0_2px_0_rgba(0,0,0,0.45)]">
+          <h1 className="title-pop text-4xl md:text-6xl animate-retro-pop">News</h1>
+          <p className="mt-4 max-w-3xl text-white/90 drop-shadow-[0_2px_0_rgba(0,0,0,0.45)] animate-enter-up" style={{ animationDelay: "80ms" }}>
             Data is the biggest bottleneck in the next wave of AI development.
             SuperLee Agent is the bridge between community, IP, and trustworthy
             data — here are the latest updates.
@@ -44,17 +44,20 @@ export default function NewsPage() {
               <a
                 key={i}
                 href={n.href}
-                className="group relative overflow-hidden rounded-2xl border border-white/15 bg-white/5 backdrop-blur transition hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(0,0,0,0.25)]"
+                className="group relative overflow-hidden rounded-2xl border border-white/15 bg-white/5 backdrop-blur transition hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(0,0,0,0.25)] animate-enter-blur"
+                style={{ animationDelay: `${60 + i * 90}ms` }}
               >
                 {/* media */}
                 <div
-                  className="aspect-[16/9] w-full"
+                  className="aspect-[16/9] w-full relative"
                   style={{
                     backgroundImage:
                       "radial-gradient(1200px 200px at -10% 0%, rgba(255,255,255,0.2), transparent), radial-gradient(1000px 160px at 120% 0%, rgba(255,255,255,0.18), transparent), linear-gradient(135deg, rgba(3,105,161,0.35), rgba(2,132,199,0.25))",
                     backgroundSize: "cover",
                   }}
-                />
+                >
+                  <div className="pointer-events-none absolute inset-0 opacity-10 mix-blend-overlay animate-scanlines" style={{ backgroundImage: "repeating-linear-gradient(0deg, rgba(255,255,255,0.25) 0, rgba(255,255,255,0.25) 1px, transparent 1px, transparent 3px)" }} />
+                </div>
                 {/* content */}
                 <div className="space-y-2 p-5">
                   <h3 className="text-lg font-bold text-white drop-shadow-[0_2px_0_rgba(0,0,0,0.45)]">
