@@ -90,7 +90,7 @@ export default function SiteLayout({ children }: PropsWithChildren) {
       <main className="flex-1">{children}</main>
       <footer className="-mt-0.5">
         <div className="w-full bg-sky-700/70 backdrop-blur-md">
-          <div className="container mx-auto flex items-center justify-center py-3">
+          <div className="container mx-auto grid place-items-center py-3">
             <span className="font-display uppercase tracking-[0.5px] text-white/90 text-[10px] drop-shadow-[0_2px_0_rgba(0,0,0,0.45)]">
               © {new Date().getFullYear()} SUPERLEE AI AGENT
             </span>
