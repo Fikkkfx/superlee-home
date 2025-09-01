@@ -27,8 +27,13 @@ export default function NewsPage() {
       {/* Header */}
       <section className="relative">
         <div className="container mx-auto px-4 py-12 md:py-16">
-          <h1 className="title-pop text-4xl md:text-6xl animate-retro-pop">News</h1>
-          <p className="mt-4 max-w-3xl text-white/90 drop-shadow-[0_2px_0_rgba(0,0,0,0.45)] animate-enter-blur" style={{ animationDelay: "120ms" }}>
+          <h1 className="title-pop text-4xl md:text-6xl animate-retro-pop">
+            News
+          </h1>
+          <p
+            className="mt-4 max-w-3xl text-white/90 drop-shadow-[0_2px_0_rgba(0,0,0,0.45)] animate-enter-blur"
+            style={{ animationDelay: "120ms" }}
+          >
             Data is the biggest bottleneck in the next wave of AI development.
             SuperLee Agent is the bridge between community, IP, and trustworthy
             data — here are the latest updates.
