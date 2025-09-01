@@ -10,7 +10,7 @@ export default function FlappySuperlee() {
             Flappy Superlee
           </h1>
           <div
-            className="mx-auto w-full h-full rounded-2xl border border-white/20 bg-white/5 backdrop-blur animate-enter-blur overflow-auto"
+            className="mx-auto w-full h-full max-w-full max-h-full rounded-2xl border border-white/20 bg-white/5 backdrop-blur animate-enter-blur overflow-hidden"
             style={{ animationDelay: "160ms" }}
           >
             <iframe
