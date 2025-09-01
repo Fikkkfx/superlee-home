@@ -3,7 +3,7 @@ import { PropsWithChildren } from "react";
 
 const navItems = [
   { to: "/about", label: "ABOUT" },
-  { to: "/ippyfy", label: "AGENT" },
+  { to: "/agent", label: "AGENT" },
   { to: "/how-to-buy", label: "NEWS" },
 ];
 
