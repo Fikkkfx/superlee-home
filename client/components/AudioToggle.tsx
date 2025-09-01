@@ -10,7 +10,7 @@ export default function AudioToggle() {
       className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/20 hover:bg-white/30 transition text-base"
       title={enabled ? "Sound on" : "Sound off"}
     >
-      <span role="img" aria-hidden>
+      <span role="img" aria-hidden="true">
         {enabled ? "🔊" : "🔈"}
       </span>
     </button>
