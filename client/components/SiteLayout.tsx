@@ -11,8 +11,8 @@ function Header() {
   return (
     <header className="sticky top-0 z-50 backdrop-blur-md">
       <div className="w-full bg-sky-700/70">
-        <div className="container mx-auto flex items-center justify-between py-3">
-          <Link to="/" className="flex items-center gap-2">
+        <div className="container mx-auto grid grid-cols-3 items-center py-3">
+          <Link to="/" className="flex items-center gap-2 justify-self-start">
             <img
               src="https://cdn.builder.io/api/v1/image/assets%2Fc692190cfd69486380fecff59911b51b%2F881566104a0e4a759178c37402fa6c33?format=webp&width=800"
               alt="SUPERLEE logo"
@@ -22,7 +22,7 @@ function Header() {
               SUPERLEE AI AGENT
             </span>
           </Link>
-          <nav className="hidden md:flex items-center gap-6 justify-start">
+          <nav className="hidden md:flex items-center gap-6 justify-center justify-self-center">
             {navItems.map((n) => (
               <NavLink
                 key={n.to}
@@ -37,7 +37,7 @@ function Header() {
               </NavLink>
             ))}
           </nav>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 justify-self-end">
             <a
               href="https://x.com/Superlee_Agent"
               target="_blank"
