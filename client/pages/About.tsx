@@ -3,10 +3,10 @@ import SiteLayout from "@/components/SiteLayout";
 export default function About() {
   return (
     <SiteLayout>
-      <section className="relative py-24 md:py-28">
+      <section className="relative py-28">
         <div className="container mx-auto px-4">
           {/* Title */}
-          <h1 className="title-pop text-center text-5xl md:text-6xl">ABOUT IPPY</h1>
+          <h1 className="title-pop text-center text-[40px] leading-[60px]">ABOUT SUPERLEE AGEnt</h1>
 
           {/* Card */}
           <div className="relative mx-auto mt-8 max-w-4xl rounded-2xl border border-white/20 bg-white/5 p-6 shadow-[0_20px_40px_rgba(0,0,0,0.25)] backdrop-blur">
