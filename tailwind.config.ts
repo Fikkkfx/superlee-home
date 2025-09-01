@@ -84,12 +84,22 @@ export default {
           "0%, 100%": { transform: "rotate(-2deg)" },
           "50%": { transform: "rotate(2deg)" },
         },
+        "enter-up": {
+          "0%": { opacity: "0", transform: "translateY(12px) scale(0.98)" },
+          "100%": { opacity: "1", transform: "translateY(0) scale(1)" },
+        },
+        "enter-blur": {
+          "0%": { opacity: "0", filter: "blur(8px)", transform: "translateY(8px)" },
+          "100%": { opacity: "1", filter: "blur(0)", transform: "translateY(0)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "logo-float": "logo-float 3s ease-in-out infinite",
         "logo-wiggle": "logo-wiggle 0.4s ease-in-out infinite",
+        "enter-up": "enter-up 0.6s cubic-bezier(0.22,1,0.36,1) both",
+        "enter-blur": "enter-blur 0.7s cubic-bezier(0.16,1,0.3,1) both",
       },
     },
   },
