@@ -6,7 +6,9 @@ export default function About() {
       <section className="relative py-28">
         <div className="container mx-auto px-4">
           {/* Title */}
-          <h1 className="title-pop text-center text-[40px] leading-[60px]">ABOUT SUPERLEE AGEnt</h1>
+          <h1 className="title-pop text-center text-[40px] leading-[60px]">
+            ABOUT SUPERLEE AGEnt
+          </h1>
 
           {/* Card */}
           <div className="relative mx-auto mt-8 max-w-4xl rounded-2xl border border-white/20 bg-white/5 p-6 shadow-[0_20px_40px_rgba(0,0,0,0.25)] backdrop-blur">
@@ -21,23 +23,27 @@ export default function About() {
 
             <div className="space-y-4 text-sm leading-6 text-white/90 drop-shadow-[0_2px_0_rgba(0,0,0,0.45)] md:text-base md:leading-7">
               <div>
-                Superlee is a community-based, multi-purpose AI agent designed to help anyone build,
-                manage, and protect identities and work in the decentralized era. With a fun yet
-                powerful retro style, Superlee prioritizes privacy, transparency, and complete user
+                Superlee is a community-based, multi-purpose AI agent designed
+                to help anyone build, manage, and protect identities and work in
+                the decentralized era. With a fun yet powerful retro style,
+                Superlee prioritizes privacy, transparency, and complete user
                 control.
               </div>
 
               <div>
-                Superlee offers a wide range of skills: rapid research, information curation, content
-                creation, repetitive task automation, community moderation, and on- and off-chain
-                action execution. All of these capabilities are modular and extensible, allowing
-                Superlee to grow with the needs of the ecosystem and the imagination of the community.
+                Superlee offers a wide range of skills: rapid research,
+                information curation, content creation, repetitive task
+                automation, community moderation, and on- and off-chain action
+                execution. All of these capabilities are modular and extensible,
+                allowing Superlee to grow with the needs of the ecosystem and
+                the imagination of the community.
               </div>
 
               <div>
-                Our mission is simple: to bridge creativity and trust. With verifiable actions and
-                open collaboration, Superlee is an agile, everyday partner that fosters the creation
-                of new, sustainable work, communities, and economies.
+                Our mission is simple: to bridge creativity and trust. With
+                verifiable actions and open collaboration, Superlee is an agile,
+                everyday partner that fosters the creation of new, sustainable
+                work, communities, and economies.
               </div>
             </div>
           </div>
