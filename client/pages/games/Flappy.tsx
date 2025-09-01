@@ -10,12 +10,8 @@ export default function FlappySuperlee() {
             Flappy Superlee
           </h1>
           <div
-            className="mx-auto rounded-2xl border border-white/20 bg-white/5 backdrop-blur animate-enter-blur overflow-hidden"
-            style={{
-              animationDelay: "160ms",
-              width: "min(92vw, calc((100svh - 220px) * 9 / 16))",
-              height: "min(calc(100svh - 220px), calc(92vw * 16 / 9))",
-            }}
+            className="mx-auto aspect-[9/16] h-[calc(100svh-200px)] md:h-[calc(100svh-240px)] rounded-2xl border border-white/20 bg-white/5 backdrop-blur animate-enter-blur overflow-hidden"
+            style={{ animationDelay: "160ms" }}
           >
             <iframe
               src="https://flappy-superlee.vercel.app/"
