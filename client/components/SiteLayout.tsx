@@ -16,7 +16,7 @@ function Header() {
             <img
               src="https://cdn.builder.io/api/v1/image/assets%2Fc692190cfd69486380fecff59911b51b%2F17597a5e17494a4da32f3412a089aa51?format=webp&width=800"
               alt="Superlee AI Agent logo"
-              className="h-7 w-7 object-contain"
+              className="h-7 w-7 object-contain animate-logo-float group-hover:animate-logo-wiggle transition-transform will-change-transform"
             />
             <span className="font-display text-[10px] leading-7 tracking-[0.75px] text-white drop-shadow-[0_2px_0_rgba(0,0,0,0.45)]">
               SUPERLEE AI AGENT
