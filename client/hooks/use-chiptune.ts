@@ -75,8 +75,8 @@ export function useChiptuneAudio() {
 
       // envelope
       env.gain.setValueAtTime(0, t);
-      env.gain.linearRampToValueAtTime(0.9, t + 0.01);
-      env.gain.exponentialRampToValueAtTime(0.0001, t + 0.25);
+      env.gain.linearRampToValueAtTime(0.8, t + 0.015);
+      env.gain.exponentialRampToValueAtTime(0.0001, t + 0.3);
 
       osc.connect(env).connect(gainRef.current);
       osc.start(t);
