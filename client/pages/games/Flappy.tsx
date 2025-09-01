@@ -1,5 +1,4 @@
 import SiteLayout from "@/components/SiteLayout";
-import LottiePlayer from "@/components/LottiePlayer";
 import { Link } from "react-router-dom";
 
 export default function FlappySuperlee() {
@@ -14,11 +13,12 @@ export default function FlappySuperlee() {
             className="mx-auto mt-8 w-full max-w-4xl h-[60vh] md:h-[70vh] rounded-2xl border border-white/20 bg-white/5 backdrop-blur p-2 animate-enter-blur"
             style={{ animationDelay: "180ms" }}
           >
-            <LottiePlayer
-              src="https://cdn.builder.io/o/assets%2F2711b768900f460f84e959042bd91f7e%2F84a2902c183c431d9f69eeaf98f10d77?alt=media&token=6e33e952-70fb-47fd-8baf-aa1ac2838ef3&apiKey=2711b768900f460f84e959042bd91f7e"
-              autoplay
-              loop
-              className="w-full h-full"
+            <iframe
+              src="https://flappy-superlee.vercel.app/"
+              title="Flappy Superlee"
+              className="w-full h-full rounded-xl"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              sandbox="allow-scripts allow-same-origin"
             />
           </div>
 
