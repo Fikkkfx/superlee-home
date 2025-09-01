@@ -10,7 +10,7 @@ export default function FlappySuperlee() {
             Flappy Superlee
           </h1>
           <div
-            className="mx-auto w-full max-w-6xl h-[calc(100vh-220px)] md:h-[calc(100vh-260px)] rounded-2xl border border-white/20 bg-white/5 overflow-hidden animate-enter-blur"
+            className="mx-auto w-full max-w-6xl h-[calc(100vh-140px)] md:h-[calc(100vh-180px)] rounded-2xl border border-white/20 bg-white/5 backdrop-blur animate-enter-blur"
             style={{ animationDelay: "160ms" }}
           >
             <iframe
@@ -18,7 +18,7 @@ export default function FlappySuperlee() {
               title="Flappy Superlee"
               className="w-full h-full"
               style={{ border: 0 }}
-              scrolling="no"
+              scrolling="auto"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               sandbox="allow-scripts allow-same-origin"
             />
