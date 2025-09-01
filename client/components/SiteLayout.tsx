@@ -1,5 +1,5 @@
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { PropsWithChildren } from "react";
+import { PropsWithChildren, useEffect, useRef, useState } from "react";
 
 const navItems = [
   { to: "/about", label: "ABOUT" },
@@ -8,6 +8,12 @@ const navItems = [
 ];
 
 function Header() {
+  const [clicked, setClicked] = useState<string | null>(null);
+  const timerRef = useRef<number | null>(null);
+
+  useEffect(() => () => {
+    if (timerRef.current) window.clearTimeout(timerRef.current);
+  }, []);
   return (
     <header className="sticky top-0 z-50 backdrop-blur-md">
       <div className="w-full bg-sky-700/70">
@@ -27,10 +33,15 @@ function Header() {
               <NavLink
                 key={n.to}
                 to={n.to}
+                onClick={() => {
+                  setClicked(n.to);
+                  if (timerRef.current) window.clearTimeout(timerRef.current);
+                  timerRef.current = window.setTimeout(() => setClicked(null), 450);
+                }}
                 className={({ isActive }) =>
-                  `font-display uppercase text-white/95 tracking-[0.5px] text-[10px] md:text-xs transition hover:text-white drop-shadow-[0_2px_0_rgba(0,0,0,0.45)] animate-logo-float hover:animate-logo-wiggle will-change-transform ${
-                    isActive ? "underline decoration-white/80" : ""
-                  }`
+                  `font-display uppercase text-white/95 tracking-[0.5px] text-[10px] md:text-xs transition hover:text-white drop-shadow-[0_2px_0_rgba(0,0,0,0.45)] ${
+                    clicked === n.to ? "animate-logo-wiggle" : ""
+                  } ${isActive ? "underline decoration-white/80" : ""}`
                 }
               >
                 {n.label}
