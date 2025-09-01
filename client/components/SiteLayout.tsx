@@ -14,8 +14,8 @@ function Header() {
         <div className="container mx-auto grid grid-cols-3 items-center py-3">
           <Link to="/" className="flex items-center gap-2 justify-self-start">
             <img
-              src="https://cdn.builder.io/api/v1/image/assets%2Fc692190cfd69486380fecff59911b51b%2F881566104a0e4a759178c37402fa6c33?format=webp&width=800"
-              alt="SUPERLEE logo"
+              src="https://cdn.builder.io/api/v1/image/assets%2Fc692190cfd69486380fecff59911b51b%2F17597a5e17494a4da32f3412a089aa51?format=webp&width=800"
+              alt="Superlee AI Agent logo"
               className="h-7 w-7 object-contain"
             />
             <span className="font-display text-[10px] leading-7 tracking-[0.75px] text-white drop-shadow-[0_2px_0_rgba(0,0,0,0.45)]">
