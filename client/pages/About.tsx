@@ -21,20 +21,21 @@ export default function About() {
 
             <div className="space-y-4 text-sm leading-6 text-white/90 drop-shadow-[0_2px_0_rgba(0,0,0,0.45)] md:text-base md:leading-7">
               <p>
-                In the wild IP blockchain depths, Ippy burst forth from Story Protocol’s
-                AI‑native magic, guarding the world of IP from thieves and copycats. Like
-                intellectual property itself, Ippy is amorphous, infinitely malleable, and can
-                take any form.
+                Superlee adalah AI Agent serba‑guna yang lahir dari komunitas—dirancang untuk
+                membantu siapa pun membangun, mengelola, dan melindungi identitas serta karya di
+                era terdesentralisasi. Dengan gaya retro yang fun namun bertenaga, Superlee tetap
+                mengutamakan privasi, transparansi, dan kontrol penuh di tangan pengguna.
               </p>
               <p>
-                Ever morphing like true IP, Ippy shape‑shifts from presidential contender to meme
-                king, chomping data pirates and fake assets whenever they appear. Ippy represents,
-                literally and figuratively, all of the things we can dream up, create, and define
-                as IP.
+                Superlee memiliki banyak “skills”: riset cepat, kurasi informasi, pembuatan konten,
+                otomasi tugas berulang, moderasi komunitas, hingga eksekusi aksi on/off‑chain.
+                Semua kemampuan ini modular dan dapat diperluas, sehingga Superlee tumbuh
+                seiring kebutuhan ekosistem dan imajinasi komunitas.
               </p>
               <p>
-                Now, Ippy rocks the Storyverse with wild antics, crazy dances, and even some IRL
-                appearances — inspiring the IP revolution through memes.
+                Misi kami sederhana: menjembatani kreativitas dan kepercayaan. Dengan aksi yang
+                dapat diverifikasi dan kolaborasi terbuka, Superlee menjadi partner harian yang
+                gesit—mendorong lahirnya karya, komunitas, dan ekonomi baru yang berkelanjutan.
               </p>
             </div>
           </div>
