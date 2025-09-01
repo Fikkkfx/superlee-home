@@ -8,9 +8,8 @@ const games = [
     description: "Tap to fly. Dodge obstacles. Retro fun!",
   },
   {
-    title: "Snake",
+    title: "Cooming soon",
     to: "/game/snake",
-    description: "Cooming soon",
     disabled: true as const,
   },
   {
