@@ -10,14 +10,14 @@ export default function FlappySuperlee() {
             Flappy Superlee
           </h1>
           <div
-            className="mx-auto w-full max-w-6xl h-[calc(100vh-140px)] md:h-[calc(100vh-180px)] rounded-2xl border border-white/20 bg-white/5 backdrop-blur animate-enter-blur"
+            className="mx-auto w-full max-w-6xl min-h-[calc(100vh-120px)] md:min-h-[calc(100vh-140px)] rounded-2xl border border-white/20 bg-white/5 backdrop-blur animate-enter-blur overflow-auto"
             style={{ animationDelay: "160ms" }}
           >
             <iframe
               src="https://flappy-superlee.vercel.app/"
               title="Flappy Superlee"
-              className="w-full h-full"
-              style={{ border: 0 }}
+              className="w-full"
+              style={{ border: 0, height: "calc(100vh - 140px)" }}
               scrolling="auto"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               sandbox="allow-scripts allow-same-origin"
