@@ -33,7 +33,8 @@ export function useChiptuneAudio() {
 
   const startNow = useCallback(() => {
     if (enabled || ctxRef.current) return;
-    const AudioCtx = (window as any).AudioContext || (window as any).webkitAudioContext;
+    const AudioCtx =
+      (window as any).AudioContext || (window as any).webkitAudioContext;
     if (!AudioCtx) return;
 
     const ctx: AudioContext = new AudioCtx();
