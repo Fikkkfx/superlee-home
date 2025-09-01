@@ -40,8 +40,6 @@ export default function Game() {
                 >
                   <div className="p-6">
                     <h3 className="text-lg font-bold text-white drop-shadow-[0_2px_0_rgba(0,0,0,0.45)]">{g.title}</h3>
-                    <p className="mt-1 text-sm text-white/85 drop-shadow-[0_2px_0_rgba(0,0,0,0.35)]">{g.description}</p>
-                    <div className="mt-4 text-xs font-extrabold text-white/70">Cooming soon</div>
                   </div>
                 </div>
               ) : (
