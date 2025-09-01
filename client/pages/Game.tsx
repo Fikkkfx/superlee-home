@@ -13,9 +13,8 @@ const games = [
     disabled: true as const,
   },
   {
-    title: "2048",
+    title: "Cooming soon",
     to: "/game/2048",
-    description: "Cooming soon",
     disabled: true as const,
   },
 ];
