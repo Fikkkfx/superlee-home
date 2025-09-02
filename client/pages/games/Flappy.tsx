@@ -1,7 +1,44 @@
 import SiteLayout from "@/components/SiteLayout";
 import { Link } from "react-router-dom";
+import { useEffect, useRef } from "react";
 
 export default function FlappySuperlee() {
+  const iframeRef = useRef<HTMLIFrameElement | null>(null);
+
+  useEffect(() => {
+    const iframe = iframeRef.current;
+
+    // Prevent Space from scrolling the page; focus the iframe so Space controls the game
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.code === "Space" || e.key === " ") {
+        const target = e.target as HTMLElement | null;
+        const isFormField = !!target && (
+          target.tagName === "INPUT" ||
+          target.tagName === "TEXTAREA" ||
+          (target as HTMLElement).isContentEditable === true
+        );
+        if (!isFormField) {
+          e.preventDefault();
+          iframe?.focus();
+        }
+      }
+    };
+
+    document.addEventListener("keydown", onKeyDown, { passive: false });
+
+    // Disable scrolling while on this page
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    // Try to focus the iframe on mount so keyboard goes to the game
+    iframe?.focus();
+
+    return () => {
+      document.removeEventListener("keydown", onKeyDown as EventListener);
+      document.body.style.overflow = prevOverflow;
+    };
+  }, []);
+
   return (
     <SiteLayout>
       <section className="relative">
@@ -14,6 +51,8 @@ export default function FlappySuperlee() {
             style={{ animationDelay: "160ms", width: 432, height: 768 }}
           >
             <iframe
+              ref={iframeRef}
+              tabIndex={-1}
               src="https://flappy-superlee.vercel.app/"
               title="Flappy Superlee"
               className="w-full h-full block"
