@@ -1,7 +1,53 @@
 import SiteLayout from "@/components/SiteLayout";
 import { Link } from "react-router-dom";
+import { useEffect, useRef } from "react";
 
 export default function FlappySuperlee() {
+  const iframeRef = useRef<HTMLIFrameElement | null>(null);
+
+  useEffect(() => {
+    const iframe = iframeRef.current;
+
+    const focusGame = () => {
+      // Focus the iframe element and its window (when possible)
+      iframe?.focus();
+      try {
+        iframe?.contentWindow?.focus();
+      } catch {}
+    };
+
+    // Prevent Space from scrolling the page; instead focus the game first
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.code === "Space" || e.key === " ") {
+        const target = e.target as HTMLElement | null;
+        const isFormField = !!target && (
+          target.tagName === "INPUT" ||
+          target.tagName === "TEXTAREA" ||
+          (target as HTMLElement).isContentEditable === true
+        );
+        if (!isFormField) {
+          e.preventDefault();
+          focusGame();
+        }
+      }
+    };
+
+    document.addEventListener("keydown", onKeyDown, { passive: false });
+
+    // Proactively focus on mount and when hovering/clicking the game area
+    focusGame();
+
+    const enterHandler = () => focusGame();
+    iframe?.addEventListener("mouseenter", enterHandler);
+    iframe?.addEventListener("pointerdown", enterHandler);
+
+    return () => {
+      document.removeEventListener("keydown", onKeyDown as EventListener);
+      iframe?.removeEventListener("mouseenter", enterHandler);
+      iframe?.removeEventListener("pointerdown", enterHandler);
+    };
+  }, []);
+
   return (
     <SiteLayout>
       <section className="relative">
@@ -14,6 +60,8 @@ export default function FlappySuperlee() {
             style={{ animationDelay: "160ms", width: 432, height: 768 }}
           >
             <iframe
+              ref={iframeRef}
+              tabIndex={0}
               src="https://flappy-superlee.vercel.app/"
               title="Flappy Superlee"
               className="w-full h-full block"
