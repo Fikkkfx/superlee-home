@@ -8,7 +8,15 @@ export default function FlappySuperlee() {
   useEffect(() => {
     const iframe = iframeRef.current;
 
-    // Prevent Space from scrolling the page; focus the iframe so Space controls the game
+    const focusGame = () => {
+      // Focus the iframe element and its window (when possible)
+      iframe?.focus();
+      try {
+        iframe?.contentWindow?.focus();
+      } catch {}
+    };
+
+    // Prevent Space from scrolling the page; instead focus the game first
     const onKeyDown = (e: KeyboardEvent) => {
       if (e.code === "Space" || e.key === " ") {
         const target = e.target as HTMLElement | null;
@@ -19,23 +27,24 @@ export default function FlappySuperlee() {
         );
         if (!isFormField) {
           e.preventDefault();
-          iframe?.focus();
+          focusGame();
         }
       }
     };
 
     document.addEventListener("keydown", onKeyDown, { passive: false });
 
-    // Disable scrolling while on this page
-    const prevOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
+    // Proactively focus on mount and when hovering/clicking the game area
+    focusGame();
 
-    // Try to focus the iframe on mount so keyboard goes to the game
-    iframe?.focus();
+    const enterHandler = () => focusGame();
+    iframe?.addEventListener("mouseenter", enterHandler);
+    iframe?.addEventListener("pointerdown", enterHandler);
 
     return () => {
       document.removeEventListener("keydown", onKeyDown as EventListener);
-      document.body.style.overflow = prevOverflow;
+      iframe?.removeEventListener("mouseenter", enterHandler);
+      iframe?.removeEventListener("pointerdown", enterHandler);
     };
   }, []);
 
@@ -52,7 +61,7 @@ export default function FlappySuperlee() {
           >
             <iframe
               ref={iframeRef}
-              tabIndex={-1}
+              tabIndex={0}
               src="https://flappy-superlee.vercel.app/"
               title="Flappy Superlee"
               className="w-full h-full block"
