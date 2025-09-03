@@ -20,11 +20,11 @@ export default function FlappySuperlee() {
     const onKeyDown = (e: KeyboardEvent) => {
       if (e.code === "Space" || e.key === " ") {
         const target = e.target as HTMLElement | null;
-        const isFormField = !!target && (
-          target.tagName === "INPUT" ||
-          target.tagName === "TEXTAREA" ||
-          (target as HTMLElement).isContentEditable === true
-        );
+        const isFormField =
+          !!target &&
+          (target.tagName === "INPUT" ||
+            target.tagName === "TEXTAREA" ||
+            (target as HTMLElement).isContentEditable === true);
         if (!isFormField) {
           e.preventDefault();
           focusGame();
