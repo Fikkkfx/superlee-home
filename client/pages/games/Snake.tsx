@@ -39,8 +39,8 @@ export default function SnakeSuperlee() {
 
     return () => {
       document.removeEventListener("keydown", onKeyDown as EventListener);
-      iframe!.removeEventListener("mouseenter", enterHandler);
-      iframe!.removeEventListener("pointerdown", enterHandler);
+      iframe?.removeEventListener("mouseenter", enterHandler);
+      iframe?.removeEventListener("pointerdown", enterHandler);
     };
   }, []);
 
@@ -53,8 +53,8 @@ export default function SnakeSuperlee() {
           </h1>
 
           <div
-            className="mx-auto rounded-2xl border border-white/20 bg-white/5 backdrop-blur animate-enter-blur overflow-hidden"
-            style={{ animationDelay: "160ms", width: 432, height: 768 }}
+            className="mx-auto rounded-2xl border border-white/20 bg-white/5 backdrop-blur animate-enter-blur overflow-hidden w-full max-w-[1152px] aspect-[3/2]"
+            style={{ animationDelay: "160ms" }}
           >
             <iframe
               ref={iframeRef}
