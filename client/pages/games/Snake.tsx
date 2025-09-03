@@ -39,8 +39,8 @@ export default function SnakeSuperlee() {
 
     return () => {
       document.removeEventListener("keydown", onKeyDown as EventListener);
-      iframe?.removeEventListener("mouseenter", enterHandler);
-      iframe?.removeEventListener("pointerdown", enterHandler);
+      iframe!.removeEventListener("mouseenter", enterHandler);
+      iframe!.removeEventListener("pointerdown", enterHandler);
     };
   }, []);
 
@@ -52,13 +52,16 @@ export default function SnakeSuperlee() {
             Snake Superlee
           </h1>
 
-          <div className="relative rounded-2xl border border-white/20 bg-white/5 backdrop-blur animate-enter-blur overflow-hidden" style={{ animationDelay: "160ms" }}>
+          <div
+            className="mx-auto rounded-2xl border border-white/20 bg-white/5 backdrop-blur animate-enter-blur overflow-hidden"
+            style={{ animationDelay: "160ms", width: 432, height: 768 }}
+          >
             <iframe
               ref={iframeRef}
               tabIndex={0}
               src="https://snake-superlee.vercel.app/"
               title="Snake Superlee"
-              className="absolute inset-0 block w-full h-full"
+              className="w-full h-full block"
               style={{ border: 0 }}
               scrolling="no"
               allow="fullscreen; gamepad; accelerometer; gyroscope; clipboard-write; encrypted-media"
