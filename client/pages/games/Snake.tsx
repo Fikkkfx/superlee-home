@@ -1,9 +1,32 @@
 import SiteLayout from "@/components/SiteLayout";
 import { Link } from "react-router-dom";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useLayoutEffect, useState } from "react";
 
 export default function SnakeSuperlee() {
   const iframeRef = useRef<HTMLIFrameElement | null>(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const [embedHeight, setEmbedHeight] = useState<number>(768);
+
+  // Dynamically size the container to match the embed layout:
+  // board is ~3:2 (w:h) plus top controls/header offset. Keep responsive to width.
+  useLayoutEffect(() => {
+    const compute = () => {
+      const w = containerRef.current?.clientWidth ?? 0;
+      if (w > 0) {
+        const boardH = (w * 2) / 3; // 3:2 board
+        const headerOffset = 190; // controls + padding
+        setEmbedHeight(Math.round(boardH + headerOffset));
+      }
+    };
+    compute();
+    const ro = new ResizeObserver(() => compute());
+    if (containerRef.current) ro.observe(containerRef.current);
+    window.addEventListener("resize", compute);
+    return () => {
+      ro.disconnect();
+      window.removeEventListener("resize", compute);
+    };
+  }, []);
 
   useEffect(() => {
     const iframe = iframeRef.current;
@@ -53,8 +76,9 @@ export default function SnakeSuperlee() {
           </h1>
 
           <div
-            className="mx-auto rounded-2xl border border-white/20 bg-white/5 backdrop-blur animate-enter-blur overflow-hidden w-full max-w-[1152px] aspect-[3/2]"
-            style={{ animationDelay: "160ms" }}
+            ref={containerRef}
+            className="mx-auto rounded-2xl border border-white/20 bg-white/5 backdrop-blur animate-enter-blur overflow-hidden w-full max-w-[1200px]"
+            style={{ animationDelay: "160ms", height: embedHeight }}
           >
             <iframe
               ref={iframeRef}
