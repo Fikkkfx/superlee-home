@@ -45,36 +45,26 @@ export default function NewsPage() {
       <section className="relative pb-20">
         <div className="container mx-auto px-4">
           <div className="grid gap-6 md:grid-cols-3">
-            {news.map((n, i) => (
-              <a
+            {news.map((_, i) => (
+              <div
                 key={i}
-                href={n.href}
-                className="group relative overflow-hidden rounded-2xl border border-white/15 bg-white/5 backdrop-blur transition hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(0,0,0,0.25)] animate-retro-pop"
+                className="relative overflow-hidden rounded-2xl border border-white/15 bg-white/5 backdrop-blur animate-retro-pop opacity-80 cursor-not-allowed select-none"
                 style={{ animationDelay: `${80 * i + 80}ms` }}
+                aria-disabled
               >
-                {/* media */}
                 <div
-                  className="aspect-[16/9] w-full"
+                  className="flex aspect-[16/9] w-full items-center justify-center"
                   style={{
                     backgroundImage:
                       "radial-gradient(1200px 200px at -10% 0%, rgba(255,255,255,0.2), transparent), radial-gradient(1000px 160px at 120% 0%, rgba(255,255,255,0.18), transparent), linear-gradient(135deg, rgba(3,105,161,0.35), rgba(2,132,199,0.25))",
                     backgroundSize: "cover",
                   }}
-                />
-                {/* content */}
-                <div className="space-y-2 p-5">
-                  <h3 className="text-lg font-bold text-white drop-shadow-[0_2px_0_rgba(0,0,0,0.45)]">
-                    {n.title}
-                  </h3>
-                  <p className="text-sm text-white/85 drop-shadow-[0_2px_0_rgba(0,0,0,0.35)]">
-                    {n.excerpt}
-                  </p>
-                  <div className="pt-2 text-xs font-extrabold text-sky-200 opacity-0 transition group-hover:opacity-100">
-                    Read more →
-                  </div>
+                >
+                  <span className="font-display text-2xl text-white drop-shadow-[0_2px_0_rgba(0,0,0,0.45)]">
+                    Coming Soon
+                  </span>
                 </div>
-                <div className="pointer-events-none absolute inset-0 rounded-2xl ring-0 ring-white/0 transition group-hover:ring-2 group-hover:ring-white/60" />
-              </a>
+              </div>
             ))}
           </div>
         </div>

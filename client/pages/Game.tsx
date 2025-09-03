@@ -8,9 +8,9 @@ const games = [
     description: "Tap to fly. Dodge obstacles. Retro fun!",
   },
   {
-    title: "Cooming soon",
+    title: "Snake Superlee",
     to: "/game/snake",
-    disabled: true as const,
+    description: "Classic snake. Fast, smooth, endless fun!",
   },
   {
     title: "Cooming soon",

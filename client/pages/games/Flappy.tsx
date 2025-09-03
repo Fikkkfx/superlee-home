@@ -20,11 +20,11 @@ export default function FlappySuperlee() {
     const onKeyDown = (e: KeyboardEvent) => {
       if (e.code === "Space" || e.key === " ") {
         const target = e.target as HTMLElement | null;
-        const isFormField = !!target && (
-          target.tagName === "INPUT" ||
-          target.tagName === "TEXTAREA" ||
-          (target as HTMLElement).isContentEditable === true
-        );
+        const isFormField =
+          !!target &&
+          (target.tagName === "INPUT" ||
+            target.tagName === "TEXTAREA" ||
+            (target as HTMLElement).isContentEditable === true);
         if (!isFormField) {
           e.preventDefault();
           focusGame();
@@ -56,8 +56,8 @@ export default function FlappySuperlee() {
             Flappy Superlee
           </h1>
           <div
-            className="mx-auto rounded-2xl border border-white/20 bg-white/5 backdrop-blur animate-enter-blur overflow-hidden"
-            style={{ animationDelay: "160ms", width: 432, height: 768 }}
+            className="mx-auto rounded-2xl border border-white/20 bg-white/5 backdrop-blur animate-enter-blur overflow-hidden w-full max-w-[432px] aspect-[9/16]"
+            style={{ animationDelay: "160ms" }}
           >
             <iframe
               ref={iframeRef}
