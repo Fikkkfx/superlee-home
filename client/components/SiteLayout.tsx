@@ -6,6 +6,7 @@ const navItems = [
   { to: "/about", label: "ABOUT" },
   { to: "/agent", label: "AGENT" },
   { to: "/game", label: "GAME" },
+  { to: "/meme", label: "MEME GENERATOR" },
   { to: "/news", label: "NEWS" },
 ];
 
