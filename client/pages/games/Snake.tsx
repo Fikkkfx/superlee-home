@@ -14,8 +14,6 @@ export default function SnakeSuperlee() {
       const w = containerRef.current?.clientWidth ?? window.innerWidth - 32;
       if (w > 0) {
         const boardH = (w * 2) / 3; // 3:2 board
-        const headerOffset = w < 768 ? 300 : 220; // mobile has taller header + controls
-        const h = Math.max(480, Math.round(boardH + headerOffset));
         setEmbedHeight(h);
       }
     };
