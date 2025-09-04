@@ -75,7 +75,16 @@ function Header() {
               className="md:hidden inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/20 hover:bg-white/30 transition"
               onClick={() => setMobileOpen((v) => !v)}
             >
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="white"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
                 {mobileOpen ? (
                   <g>
                     <line x1="18" y1="6" x2="6" y2="18" />
@@ -141,7 +150,9 @@ function Header() {
                     `block rounded-lg px-3 py-2 text-white/95 hover:bg-white/10 transition ${isActive ? "bg-white/15" : ""}`
                   }
                 >
-                  <span className="font-display text-xs tracking-[0.5px] uppercase">{n.label}</span>
+                  <span className="font-display text-xs tracking-[0.5px] uppercase">
+                    {n.label}
+                  </span>
                 </NavLink>
               ))}
             </div>
