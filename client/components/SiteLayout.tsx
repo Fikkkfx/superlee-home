@@ -31,7 +31,7 @@ function Header() {
   return (
     <header className="sticky top-0 z-50 backdrop-blur-md">
       <div className="w-full bg-sky-700/70">
-        <div className="container mx-auto grid grid-cols-3 items-center py-3">
+        <div className="container mx-auto grid grid-cols-[auto,1fr,auto] items-center py-3 px-4 md:px-0">
           <Link
             to="/"
             className="flex items-center gap-2 justify-self-start group"
@@ -104,7 +104,7 @@ function Header() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="X (Twitter)"
-              className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/20 hover:bg-white/30 transition"
+              className="hidden md:inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/20 hover:bg-white/30 transition"
             >
               <img
                 src="https://cdn.simpleicons.org/x/ffffff"
@@ -115,7 +115,7 @@ function Header() {
             <a
               href="#"
               aria-label="Discord"
-              className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/20 hover:bg-white/30 transition"
+              className="hidden md:inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/20 hover:bg-white/30 transition"
             >
               <img
                 src="https://cdn.simpleicons.org/discord/ffffff"
@@ -128,7 +128,7 @@ function Header() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Dexscreener"
-              className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/20 hover:bg-white/30 transition"
+              className="hidden md:inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/20 hover:bg-white/30 transition"
             >
               <img
                 src="https://cdn.builder.io/api/v1/image/assets%2Fc692190cfd69486380fecff59911b51b%2F351c8fae37694271824454676fb575a7?format=webp&width=800"
