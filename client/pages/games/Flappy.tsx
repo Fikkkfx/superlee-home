@@ -1,9 +1,28 @@
 import SiteLayout from "@/components/SiteLayout";
 import { Link } from "react-router-dom";
-import { useEffect, useRef } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 
 export default function FlappySuperlee() {
   const iframeRef = useRef<HTMLIFrameElement | null>(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const [scale, setScale] = useState(1);
+
+  // Keep game logic viewport at 432x768; scale down to fit container width
+  useLayoutEffect(() => {
+    const compute = () => {
+      const w = containerRef.current?.clientWidth ?? 432;
+      const s = Math.min(1, w / 432);
+      setScale(s);
+    };
+    compute();
+    const ro = new ResizeObserver(() => compute());
+    if (containerRef.current) ro.observe(containerRef.current);
+    window.addEventListener("resize", compute);
+    return () => {
+      ro.disconnect();
+      window.removeEventListener("resize", compute);
+    };
+  }, []);
 
   useEffect(() => {
     const iframe = iframeRef.current;
@@ -56,20 +75,26 @@ export default function FlappySuperlee() {
             Flappy Superlee
           </h1>
           <div
-            className="mx-auto rounded-2xl border border-white/20 bg-white/5 md:backdrop-blur md:animate-enter-blur overflow-hidden w-full max-w-[432px] aspect-[9/16] will-change-transform"
-            style={{ animationDelay: "160ms" }}
+            ref={containerRef}
+            className="mx-auto rounded-2xl border border-white/20 bg-white/5 md:backdrop-blur md:animate-enter-blur overflow-hidden w-full max-w-[432px]"
+            style={{ animationDelay: "160ms", height: Math.round(768 * scale) }}
           >
-            <iframe
-              ref={iframeRef}
-              tabIndex={0}
-              src="https://flappy-superlee.vercel.app/"
-              title="Flappy Superlee"
-              className="w-full h-full block"
-              style={{ border: 0 }}
-              scrolling="no"
-              allow="fullscreen; gamepad; accelerometer; gyroscope; clipboard-write; encrypted-media"
-              sandbox="allow-scripts allow-same-origin"
-            />
+            <div
+              className="w-[432px] h-[768px] origin-top mx-auto"
+              style={{ transform: `scale(${scale})` }}
+            >
+              <iframe
+                ref={iframeRef}
+                tabIndex={0}
+                src="https://flappy-superlee.vercel.app/"
+                title="Flappy Superlee"
+                className="block"
+                style={{ border: 0, width: 432, height: 768 }}
+                scrolling="no"
+                allow="fullscreen; gamepad; accelerometer; gyroscope; clipboard-write; encrypted-media"
+                sandbox="allow-scripts allow-same-origin"
+              />
+            </div>
           </div>
 
           <div className="flex justify-center pb-4 md:pb-6">
