@@ -11,18 +11,30 @@ export default function SnakeSuperlee() {
   // board is ~3:2 (w:h) plus top controls/header offset. Keep responsive to width.
   useLayoutEffect(() => {
     const compute = () => {
-      const w = containerRef.current?.clientWidth ?? window.innerWidth - 32;
+      const baseW = containerRef.current?.clientWidth;
+      const w =
+        typeof baseW === "number" && baseW > 0
+          ? baseW
+          : Math.max(320, window.innerWidth - 32);
       if (w > 0) {
         const boardH = (w * 2) / 3; // 3:2 board
+        const headerOffset = w < 768 ? 160 : 190; // controls + padding
+        let h = Math.round(boardH + headerOffset);
+        const maxH = Math.max(420, Math.floor(window.innerHeight * 0.84));
+        const minH = 420; // ensure playable area
+        h = Math.max(minH, Math.min(h, maxH));
         setEmbedHeight(h);
       }
     };
     compute();
-    const ro = new ResizeObserver(() => compute());
-    if (containerRef.current) ro.observe(containerRef.current);
+    let ro: ResizeObserver | null = null;
+    if (typeof ResizeObserver !== "undefined") {
+      ro = new ResizeObserver(() => compute());
+      if (containerRef.current) ro.observe(containerRef.current);
+    }
     window.addEventListener("resize", compute);
     return () => {
-      ro.disconnect();
+      ro?.disconnect();
       window.removeEventListener("resize", compute);
     };
   }, []);
@@ -77,7 +89,11 @@ export default function SnakeSuperlee() {
           <div
             ref={containerRef}
             className="mx-auto rounded-2xl border border-white/20 bg-white/5 backdrop-blur animate-enter-blur overflow-hidden w-full max-w-[1200px]"
-            style={{ animationDelay: "160ms", height: embedHeight }}
+            style={{
+              animationDelay: "160ms",
+              height: embedHeight,
+              minHeight: 420,
+            }}
           >
             <iframe
               ref={iframeRef}
