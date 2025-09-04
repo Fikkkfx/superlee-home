@@ -12,7 +12,9 @@ const navItems = [
 
 function Header() {
   const [clicked, setClicked] = useState<string | null>(null);
+  const [mobileOpen, setMobileOpen] = useState(false);
   const timerRef = useRef<number | null>(null);
+  const loc = useLocation();
 
   useEffect(
     () => () => {
@@ -20,6 +22,12 @@ function Header() {
     },
     [],
   );
+
+  useEffect(() => {
+    // Close mobile menu on route change
+    setMobileOpen(false);
+  }, [loc.pathname]);
+
   return (
     <header className="sticky top-0 z-50 backdrop-blur-md">
       <div className="w-full bg-sky-700/70">
@@ -61,6 +69,36 @@ function Header() {
             ))}
           </nav>
           <div className="flex items-center gap-2 justify-self-end">
+            <button
+              type="button"
+              aria-label="Open menu"
+              className="md:hidden inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/20 hover:bg-white/30 transition"
+              onClick={() => setMobileOpen((v) => !v)}
+            >
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="white"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                {mobileOpen ? (
+                  <g>
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                  </g>
+                ) : (
+                  <g>
+                    <line x1="3" y1="6" x2="21" y2="6" />
+                    <line x1="3" y1="12" x2="21" y2="12" />
+                    <line x1="3" y1="18" x2="21" y2="18" />
+                  </g>
+                )}
+              </svg>
+            </button>
             <a
               href="https://x.com/Superlee_Agent"
               target="_blank"
@@ -101,6 +139,25 @@ function Header() {
             <AudioToggle />
           </div>
         </div>
+        {mobileOpen && (
+          <div className="md:hidden border-t border-white/10 bg-sky-700/95 backdrop-blur-md">
+            <div className="container mx-auto px-4 py-3 grid gap-2">
+              {navItems.map((n) => (
+                <NavLink
+                  key={n.to}
+                  to={n.to}
+                  className={({ isActive }) =>
+                    `block rounded-lg px-3 py-2 text-white/95 hover:bg-white/10 transition ${isActive ? "bg-white/15" : ""}`
+                  }
+                >
+                  <span className="font-display text-xs tracking-[0.5px] uppercase">
+                    {n.label}
+                  </span>
+                </NavLink>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </header>
   );
