@@ -18,11 +18,10 @@ export default function SnakeSuperlee() {
           : Math.max(320, window.innerWidth - 32);
       if (w > 0) {
         const boardH = (w * 2) / 3; // 3:2 board
-        const headerOffset = w < 768 ? 160 : 190; // controls + padding
+        const headerOffset = w < 480 ? 320 : w < 768 ? 280 : 220; // match embed header+controls
         let h = Math.round(boardH + headerOffset);
-        const maxH = Math.max(420, Math.floor(window.innerHeight * 0.84));
-        const minH = 420; // ensure playable area
-        h = Math.max(minH, Math.min(h, maxH));
+        const minH = 520; // ensure full header + some board is visible
+        h = Math.max(minH, h);
         setEmbedHeight(h);
       }
     };
@@ -102,7 +101,6 @@ export default function SnakeSuperlee() {
               title="Snake Superlee"
               className="w-full h-full block"
               style={{ border: 0 }}
-              scrolling="no"
               allow="fullscreen; gamepad; accelerometer; gyroscope; clipboard-write; encrypted-media"
               sandbox="allow-scripts allow-same-origin"
             />
