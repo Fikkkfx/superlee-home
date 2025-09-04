@@ -91,7 +91,7 @@ export default function SnakeSuperlee() {
             style={{
               animationDelay: "160ms",
               height: embedHeight,
-              minHeight: 420,
+              minHeight: 520,
             }}
           >
             <iframe
