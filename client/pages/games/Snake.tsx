@@ -87,7 +87,7 @@ export default function SnakeSuperlee() {
 
           <div
             ref={containerRef}
-            className="mx-auto rounded-2xl border border-white/20 bg-white/5 backdrop-blur animate-enter-blur overflow-hidden w-full max-w-[1200px]"
+            className="mx-auto rounded-2xl border border-white/20 bg-white/5 md:backdrop-blur md:animate-enter-blur overflow-hidden w-full max-w-[1200px] will-change-transform"
             style={{
               animationDelay: "160ms",
               height: embedHeight,
