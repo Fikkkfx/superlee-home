@@ -14,11 +14,8 @@ export default function SnakeSuperlee() {
       const w = containerRef.current?.clientWidth ?? window.innerWidth - 32;
       if (w > 0) {
         const boardH = (w * 2) / 3; // 3:2 board
-        const headerOffset = w < 768 ? 160 : 190; // controls + padding, smaller on mobile
-        let h = Math.round(boardH + headerOffset);
-        const maxH = Math.floor(window.innerHeight * 0.78); // keep within viewport
-        const minH = 420; // ensure playable area
-        h = Math.max(minH, Math.min(h, maxH));
+        const headerOffset = w < 768 ? 300 : 220; // mobile has taller header + controls
+        const h = Math.max(480, Math.round(boardH + headerOffset));
         setEmbedHeight(h);
       }
     };
