@@ -89,7 +89,7 @@ export default function SnakeSuperlee() {
           <div
             ref={containerRef}
             className="mx-auto rounded-2xl border border-white/20 bg-white/5 backdrop-blur animate-enter-blur overflow-hidden w-full max-w-[1200px]"
-            style={{ animationDelay: "160ms", height: embedHeight }}
+            style={{ animationDelay: "160ms", height: embedHeight, minHeight: 420 }}
           >
             <iframe
               ref={iframeRef}
