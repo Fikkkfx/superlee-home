@@ -28,7 +28,7 @@ export default function Meme() {
           </h1>
 
           <div
-            className="mx-auto w-full max-w-[1200px] rounded-2xl border border-white/20 bg-white/5 md:backdrop-blur md:animate-enter-blur overflow-hidden"
+            className="mx-auto w-full max-w-[1200px] rounded-2xl border border-white/20 bg-white/5 md:backdrop-blur md:animate-enter-blur overflow-auto"
             style={{ height, animationDelay: "160ms" }}
           >
             <iframe
