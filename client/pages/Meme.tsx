@@ -1,22 +1,32 @@
 import SiteLayout from "@/components/SiteLayout";
-import { useLayoutEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 
 export default function Meme() {
-  const [height, setHeight] = useState(640);
+  const iframeRef = useRef<HTMLIFrameElement | null>(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const BASE_W = 1280;
+  const BASE_H = 800;
+  const [scale, setScale] = useState(1);
 
   useLayoutEffect(() => {
     const compute = () => {
-      const vh = typeof window !== "undefined" ? window.innerHeight : 800;
-      const vw = typeof window !== "undefined" ? window.innerWidth : 1280;
-      const header = vw < 768 ? 96 : 112; // matches layout min-h calculations
-      const footer = 56; // footer bar
-      const gaps = 48 + 24; // top padding + internal gap
-      const h = Math.max(560, vh - header - footer - gaps);
-      setHeight(h);
+      const w = containerRef.current?.clientWidth ?? BASE_W;
+      const s = Math.min(1, w / BASE_W);
+      setScale(s);
     };
     compute();
+    const ro = new ResizeObserver(() => compute());
+    if (containerRef.current) ro.observe(containerRef.current);
     window.addEventListener("resize", compute);
-    return () => window.removeEventListener("resize", compute);
+    return () => {
+      ro.disconnect();
+      window.removeEventListener("resize", compute);
+    };
+  }, []);
+
+  useEffect(() => {
+    // Best-effort focus so keyboard works if the app uses shortcuts
+    iframeRef.current?.focus();
   }, []);
 
   return (
@@ -28,17 +38,24 @@ export default function Meme() {
           </h1>
 
           <div
-            className="mx-auto w-full max-w-[1200px] rounded-2xl border border-white/20 bg-white/5 md:backdrop-blur md:animate-enter-blur overflow-auto"
-            style={{ height, animationDelay: "160ms" }}
+            ref={containerRef}
+            className="mx-auto w-full max-w-[1200px] rounded-2xl border border-white/20 bg-white/5 md:backdrop-blur md:animate-enter-blur overflow-hidden"
+            style={{ animationDelay: "160ms", height: Math.round(BASE_H * scale) }}
           >
-            <iframe
-              src="https://meme-generator-omega-one.vercel.app/"
-              title="Meme Generator"
-              className="w-full h-full block"
-              style={{ border: 0 }}
-              allow="fullscreen; clipboard-write; encrypted-media"
-              sandbox="allow-forms allow-scripts allow-same-origin"
-            />
+            <div
+              className="origin-top mx-auto"
+              style={{ width: BASE_W, height: BASE_H, transform: `scale(${scale})` }}
+            >
+              <iframe
+                ref={iframeRef}
+                src="https://meme-generator-omega-one.vercel.app/"
+                title="Meme Generator"
+                className="block"
+                style={{ border: 0, width: BASE_W, height: BASE_H }}
+                allow="fullscreen; clipboard-write; encrypted-media"
+                sandbox="allow-forms allow-scripts allow-same-origin"
+              />
+            </div>
           </div>
         </div>
       </section>
