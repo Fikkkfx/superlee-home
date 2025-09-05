@@ -7,8 +7,11 @@ export default function Meme() {
   useLayoutEffect(() => {
     const compute = () => {
       const vh = typeof window !== "undefined" ? window.innerHeight : 800;
-      // Reserve space for header/footer paddings; let embed use full width
-      const h = Math.max(520, Math.floor(vh * 0.82));
+      const vw = typeof window !== "undefined" ? window.innerWidth : 1280;
+      const header = vw < 768 ? 96 : 112; // matches layout min-h calculations
+      const footer = 56; // footer bar
+      const gaps = 48 + 24; // top padding + internal gap
+      const h = Math.max(560, vh - header - footer - gaps);
       setHeight(h);
     };
     compute();
