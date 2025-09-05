@@ -39,12 +39,12 @@ export default function Meme() {
 
           <div
             ref={containerRef}
-            className="mx-auto w-full max-w-[1200px] rounded-2xl border border-white/20 bg-white/5 md:backdrop-blur md:animate-enter-blur overflow-hidden"
-            style={{ animationDelay: "160ms", height: Math.round(BASE_H * scale) }}
+            className="mx-auto w-full max-w-[1200px] rounded-2xl border border-white/20 bg-transparent md:bg-white/5 md:backdrop-blur md:animate-enter-blur overflow-hidden"
+            style={{ animationDelay: "160ms", height: Math.ceil(BASE_H * scale) + 1 }}
           >
             <div
-              className="origin-top mx-auto"
-              style={{ width: BASE_W, height: BASE_H, transform: `scale(${scale})` }}
+              className="origin-top mx-auto rounded-2xl overflow-hidden"
+              style={{ width: BASE_W, height: BASE_H, transform: `scale(${scale})`, transformOrigin: "top left" }}
             >
               <iframe
                 ref={iframeRef}
