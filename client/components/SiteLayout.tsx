@@ -113,7 +113,9 @@ function Header() {
               />
             </a>
             <a
-              href="#"
+              href="https://discord.gg/p7sgEmk24a"
+              target="_blank"
+              rel="noopener noreferrer"
               aria-label="Discord"
               className="hidden md:inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/20 hover:bg-white/30 transition"
             >
