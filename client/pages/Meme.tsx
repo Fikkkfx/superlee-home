@@ -61,7 +61,7 @@ export default function Meme() {
                 className="block"
                 style={{ border: 0, width: BASE_W, height: BASE_H }}
                 allow="fullscreen; clipboard-write; encrypted-media"
-                sandbox="allow-forms allow-scripts allow-same-origin allow-downloads"
+                sandbox="allow-forms allow-scripts allow-same-origin allow-downloads allow-popups-to-escape-sandbox"
               />
             </div>
           </div>
