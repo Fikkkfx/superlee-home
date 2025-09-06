@@ -10,6 +10,7 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import About from "./pages/About";
 import News from "./pages/News";
+import AnnouncementNFT from "./pages/news/AnnouncementNFT";
 import FAQ from "./pages/FAQ";
 import Agent from "./pages/Agent";
 import Game from "./pages/Game";
