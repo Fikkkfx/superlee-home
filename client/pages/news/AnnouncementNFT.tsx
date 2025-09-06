@@ -6,7 +6,7 @@ export default function AnnouncementNFT() {
       <section className="relative">
         <div className="container mx-auto px-4 py-10 md:py-14">
           <h1 className="title-pop text-3xl md:text-5xl animate-retro-pop">
-            ANNOUNCEMENT – SUPERLEE AGENT NFT IS COMING
+            SUPERLEE AGENT NFT IS COMING
           </h1>
           <p
             className="mt-3 max-w-3xl text-white/90 drop-shadow-[0_2px_0_rgba(0,0,0,0.45)] animate-enter-blur"
