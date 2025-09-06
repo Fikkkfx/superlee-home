@@ -55,26 +55,53 @@ export default function NewsPage() {
       <section className="relative pb-20">
         <div className="container mx-auto px-4">
           <div className="grid gap-6 md:grid-cols-3">
-            {news.map((_, i) => (
-              <div
+            {news.map((item, i) => (
+              <a
                 key={i}
-                className="relative overflow-hidden rounded-2xl border border-white/15 bg-white/5 backdrop-blur animate-retro-pop opacity-80 cursor-not-allowed select-none"
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative overflow-hidden rounded-2xl border border-white/15 bg-white/5 backdrop-blur animate-retro-pop focus:outline-none focus:ring-2 focus:ring-sky-400/60"
                 style={{ animationDelay: `${80 * i + 80}ms` }}
-                aria-disabled
               >
-                <div
-                  className="flex aspect-[16/9] w-full items-center justify-center"
-                  style={{
-                    backgroundImage:
-                      "radial-gradient(1200px 200px at -10% 0%, rgba(255,255,255,0.2), transparent), radial-gradient(1000px 160px at 120% 0%, rgba(255,255,255,0.18), transparent), linear-gradient(135deg, rgba(3,105,161,0.35), rgba(2,132,199,0.25))",
-                    backgroundSize: "cover",
-                  }}
-                >
-                  <span className="font-display text-2xl text-white drop-shadow-[0_2px_0_rgba(0,0,0,0.45)]">
-                    Coming Soon
-                  </span>
+                <div className="relative aspect-[16/9] w-full overflow-hidden">
+                  {item.thumb?.type === "video" && item.thumb.src ? (
+                    <video
+                      src={item.thumb.src}
+                      className="absolute inset-0 h-full w-full object-cover"
+                      muted
+                      playsInline
+                      autoPlay
+                      loop
+                      preload="metadata"
+                      aria-label="News thumbnail video"
+                    />
+                  ) : (
+                    <div
+                      className="flex h-full w-full items-center justify-center"
+                      style={{
+                        backgroundImage:
+                          "radial-gradient(1200px 200px at -10% 0%, rgba(255,255,255,0.2), transparent), radial-gradient(1000px 160px at 120% 0%, rgba(255,255,255,0.18), transparent), linear-gradient(135deg, rgba(3,105,161,0.35), rgba(2,132,199,0.25))",
+                        backgroundSize: "cover",
+                      }}
+                    >
+                      <span className="font-display text-2xl text-white drop-shadow-[0_2px_0_rgba(0,0,0,0.45)]">
+                        Coming Soon
+                      </span>
+                    </div>
+                  )}
                 </div>
-              </div>
+                <div className="p-4">
+                  <h3 className="text-lg font-semibold leading-snug text-white/95 drop-shadow-[0_1px_0_rgba(0,0,0,0.45)] group-hover:underline">
+                    {item.title}
+                  </h3>
+                  {item.excerpt && (
+                    <p className="mt-1 text-sm text-white/85 line-clamp-3">
+                      {item.excerpt}
+                    </p>
+                  )}
+                </div>
+              </a>
             ))}
           </div>
         </div>
