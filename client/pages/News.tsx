@@ -2,6 +2,16 @@ import SiteLayout from "@/components/SiteLayout";
 
 const news = [
   {
+    title: "# ANNOUNCEMENT – SUPERLEE AGENT NFT IS COMING",
+    excerpt:
+      "Something is moving in the shadows... The wait is almost over. Soon, the world will finally meet Superlee Agent NFT. Stay sharp. Stay tuned. Get ready to witness the next chapter of Superlee.",
+    href: "https://x.com/Superlee_Agent/status/1964016895193207029",
+    thumb: {
+      type: "video",
+      src: "https://cdn.builder.io/o/assets%2F2711b768900f460f84e959042bd91f7e%2Fbaa9f8d990c246f38a95b2de3933a942?alt=media&token=60c29249-b9ee-40f4-978c-5b5ade55dd80&apiKey=2711b768900f460f84e959042bd91f7e",
+    },
+  },
+  {
     title: "Why We're Building SuperLee Agent",
     excerpt:
       "A look into how community-driven agents can unlock IP-safe, decentralized identity for everyone.",
