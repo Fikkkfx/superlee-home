@@ -12,7 +12,9 @@ export default function AnnouncementNFT() {
             className="mt-3 max-w-3xl text-white/90 drop-shadow-[0_2px_0_rgba(0,0,0,0.45)] animate-enter-blur"
             style={{ animationDelay: "120ms" }}
           >
-            Something is moving in the shadows... The wait is almost over. Soon, the world will finally meet Superlee Agent NFT. Stay sharp. Stay tuned. Get ready to witness the next chapter of Superlee.
+            Something is moving in the shadows... The wait is almost over. Soon,
+            the world will finally meet Superlee Agent NFT. Stay sharp. Stay
+            tuned. Get ready to witness the next chapter of Superlee.
           </p>
         </div>
       </section>

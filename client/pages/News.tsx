@@ -124,7 +124,9 @@ export default function NewsPage() {
                         backgroundSize: "cover",
                       }}
                     >
-                      <span className="font-display text-2xl text-white drop-shadow-[0_2px_0_rgba(0,0,0,0.45)]">Coming Soon</span>
+                      <span className="font-display text-2xl text-white drop-shadow-[0_2px_0_rgba(0,0,0,0.45)]">
+                        Coming Soon
+                      </span>
                     </div>
                   </div>
                 </div>
