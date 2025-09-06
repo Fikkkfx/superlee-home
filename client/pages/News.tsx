@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const news = [
   {
-    title: "ANNOUNCEMENT – SUPERLEE AGENT NFT IS COMING",
+    title: "SUPERLEE AGENT NFT IS COMING",
     excerpt:
       "Something is moving in the shadows... The wait is almost over. Soon, the world will finally meet Superlee Agent NFT. Stay sharp. Stay tuned. Get ready to witness the next chapter of Superlee.",
     route: "/news/announcement-superlee-agent-nft",
@@ -115,7 +115,18 @@ export default function NewsPage() {
                   style={{ animationDelay: `${80 * i + 80}ms` }}
                   aria-disabled
                 >
-                  {CardInner}
+                  <div className="relative aspect-[16/9] w-full overflow-hidden">
+                    <div
+                      className="flex h-full w-full items-center justify-center"
+                      style={{
+                        backgroundImage:
+                          "radial-gradient(1200px 200px at -10% 0%, rgba(255,255,255,0.2), transparent), radial-gradient(1000px 160px at 120% 0%, rgba(255,255,255,0.18), transparent), linear-gradient(135deg, rgba(3,105,161,0.35), rgba(2,132,199,0.25))",
+                        backgroundSize: "cover",
+                      }}
+                    >
+                      <span className="font-display text-2xl text-white drop-shadow-[0_2px_0_rgba(0,0,0,0.45)]">Coming Soon</span>
+                    </div>
+                  </div>
                 </div>
               );
             })}
