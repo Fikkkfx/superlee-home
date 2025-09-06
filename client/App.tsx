@@ -10,6 +10,7 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import About from "./pages/About";
 import News from "./pages/News";
+import AnnouncementNFT from "./pages/news/AnnouncementNFT";
 import FAQ from "./pages/FAQ";
 import Agent from "./pages/Agent";
 import Game from "./pages/Game";
@@ -30,6 +31,10 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
           <Route path="/news" element={<News />} />
+          <Route
+            path="/news/announcement-superlee-agent-nft"
+            element={<AnnouncementNFT />}
+          />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/agent" element={<Agent />} />
           <Route path="/game" element={<Game />} />
